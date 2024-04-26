@@ -1,0 +1,14 @@
+:root {
+    --purple: #8a2be2;
+    --green: #00ff00;
+    --black: #000000;
+    --white: #ffffff;
+    --red: #ff0000;
+    --gold-yellow: #ffd700;
+}
+
+Body {
+    background: url("./img/background.jpeg");
+    background-size: cover;
+    color: white;
+}
