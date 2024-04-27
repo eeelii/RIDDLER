@@ -9,7 +9,7 @@
 }
 
 Body {
-    background: url("./img/background.jpeg") transparent;
+    background: url("./img/background.jpeg");
     background-size: cover;
     color: white;
     /* background: transparent; */
@@ -19,24 +19,35 @@ h1 {
     font-family: "Nanum Gothic", sans-serif;
     font-weight: 800;
     color: var(--purple);
-    text-align: center;
+    text-align: left;
     height: 100px;
     letter-spacing: 2px;
     text-transform: uppercase;
     text-shadow: 5px 10px 0 var(--green);
     font-size: 50px;
 }
+
+/* Design riddle box  */
 .riddles {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* border: 2px solid yellow; */
+    width: 50%;
+    height: 150px;
+    padding: 50px;
 }
 button {
     padding: 10px 20px;
-    color: var(--green);
-    background-color: var(--purple);
-    border: 3px solid var(--gold-yellow);
+    color: var(--white);
+    background-color: var(--red);
+    border: 3px solid var(--red);
     cursor: pointer;
+    /* height: 100px; */
+    /* width: 100px; */
+    border-radius: 10%;
+    font-size: 20px;
+    box-shadow: 5px 2px 6px var(--green);
 }
 button:active {
     padding: 9px 19px;
@@ -44,7 +55,38 @@ button:active {
 
 p {
     font-family: "Coveat", cursive;
-    color: var(--red);
-    font-size: 20px;
+    color: var(--white);
+    font-size: 30px;
     font-weight: 800;
+    text-shadow: 3px 5px 6px var(--purple);
+}
+
+/* design user input  */
+img {
+    width: 50px;
+    height: 50px;
+}
+.png1 {
+    position:absolute;
+    top: 10;
+    left: 0;
+    bottom: 15px;
+}
+
+input {
+    width: 250px;
+    height: 70px;
+    text-align: center;
+    border-radius: 10px 20px;
+    padding: 0 20px;
+}
+
+.image-manipulation {
+    position: relative;
+    width: 200px;
+}
+.answer {
+    /* border: 2px solid red; */
+    width: 50%;
+    display: flex;
 }
