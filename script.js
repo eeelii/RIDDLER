@@ -60,9 +60,14 @@ counter = 0;
 function displayQuestion() {
   const riddleQ = document.querySelector(".lstRiddle");
   // display the first riddle
-  riddleQ.innerHTML = riddles[counter].question;
+  // riddleQ.innerHTML = riddles[counter].question;
+  riddleQ.innerHTML = riddles[ranNum].question;
   // change btn to next
   // btn.innerHTML = "Next";
+}
+// update score 
+function updateScore() {
+  score.value++;
 }
 
 // create a function that checks if the answer for the riddle is correct
@@ -72,6 +77,7 @@ function answerCheck() {
   } else if (userInput.value === riddles[counter].answer) {
     btn.innerHTML = "Next";
     counter++;
+    updateScore();
     if (counter === riddles.length) {
       counter = 0;
     }
@@ -94,12 +100,16 @@ function resetForm() {
 }
 
 // Shuffling the riddles, WIP
-function shuffle(riddles) {
-  for (let i = riddles.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [riddles[i], (riddles[j] = riddles[j]), riddles[i]];
-  }
-  return riddles;
-}
 
-const shuffleRiddles = shuffle(riddles);
+
+// function shuffle(riddles) {
+//   for (let i = riddles.length - 1; i > 0; i--) {
+//     const j = Math.floor(Math.random() * (i + 1));
+//     [riddles[i], (riddles[j] = riddles[j]), riddles[i]];
+//   }
+//   return riddles;
+// }
+
+// const shuffleRiddles = shuffle(riddles); **** COULD BE REPLACED WITH ranNum variable above, unless you could make it work ****
+
+

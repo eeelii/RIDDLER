@@ -73,7 +73,7 @@ img {
     bottom: 15px;
 }
 
-input {
+.userAnswer {
     width: 250px;
     height: 70px;
     text-align: center;

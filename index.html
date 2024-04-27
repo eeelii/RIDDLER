@@ -19,7 +19,7 @@
     <form id="answer-form">
       <div class="answer">
         <div class="image-manipulation">
-            <input id="user-value" type="text" placeholder="Answer if you dare" />
+            <input class="userAnswer" id="user-value" type="text" placeholder="Answer if you dare" />
             <img class="png1" src="https://pngfre.com/wp-content/uploads/Joker-21.png" alt="joker face">
             <!-- <img class="png2" src="https://i.pinimg.com/originals/2d/1f/f0/2d1ff0fed6efddabb06e1a2c27b420ca.png" alt="Harley quinn"> -->
         </div>
@@ -33,7 +33,7 @@
     </form>
     <div class="socre">
       <h2>You</h2>
-      <p id="user-Score">0</p>
+      <input type="number" name="score" id="user-Score" max="5" min="0" value="0">
     </div>
     <script src="script.js"></script>
   </body>
