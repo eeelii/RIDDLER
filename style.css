@@ -113,7 +113,10 @@ img {
 }
 
 .score-content {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    text-align: center;
     align-items: center;
+    /* border: 3px solid green; */
+    /* height: 100px; */
+
 }

@@ -66,25 +66,26 @@ function displayQuestion() {
   // btn.innerHTML = "Next";
 }
 // update score 
+let scoreCounter = 5;
 function updateScore() {
-  score.value++;
+  score.innerHTML = scoreCounter;
+  scoreCounter++;
 }
 
 // create a function that checks if the answer for the riddle is correct
 function answerCheck() {
   if (userInput.value === "") {
     btn.innerHTML = "Must Answer First";
-  } else if (userInput.value === riddles[counter].answer) {
+  } else if (userInput.value === riddles[ranNum].answer) {
     btn.innerHTML = "Next";
     counter++;
-    updateScore();
     if (counter === riddles.length) {
       counter = 0;
     }
     displayQuestion();
-  } else {
-    
   }
+  updateScore();
+
 }
 
 // get the submit element
@@ -95,9 +96,12 @@ submit.onclick = answerCheck;
 btn.onclick = displayQuestion;
 
 // Reset form after answering and it goes to next question
-function resetForm() {
-  document.getElementById("answer-form").reset();
-}
+// function resetForm() {
+//   document.getElementById("answer-form").reset();
+// }
+
+
+
 
 // Shuffling the riddles, WIP
 
