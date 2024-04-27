@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Riddle Me this</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- create the header -->
     <h1>Riddle me this !!</h1>
     <!-- create a div to store the content of the riddle  -->
     <div class="riddles">
-        <button id="Ready">I'm Ready</button>
-        <p class="lstRiddle">
-            
-        </p>
+      <button id="Ready">I'm Ready</button>
+      <p class="lstRiddle"></p>
     </div>
-    <div class="answer">
-        <input id="user-value" type="text" placeholder="Answer if you dare">
-    </div>
-    <br>
-    <div class="submit-button">
-        <button id="submit">Testing my luck</button>
-    </div>
+    <form id="answer-form">
+      <div class="answer">
+        <input id="user-value" type="text" placeholder="Answer if you dare" />
+        <!-- Adding an error validator but its a wip -->
+        <!-- <span class="modal__error" id="input-error"></span> -->
+      </div>
+      <br />
+      <div class="submit-button">
+        <button id="submit" onclick="resetForm()">Testing my luck</button>
+      </div>
+    </form>
     <div class="socre">
-        <h2>You</h2>
-        <p id="user-Score">0</p>
+      <h2>You</h2>
+      <p id="user-Score">0</p>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
