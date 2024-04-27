@@ -76,6 +76,8 @@ function answerCheck() {
       counter = 0;
     }
     displayQuestion();
+  } else {
+    
   }
 }
 

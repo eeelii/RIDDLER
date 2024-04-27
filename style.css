@@ -5,10 +5,46 @@
     --white: #ffffff;
     --red: #ff0000;
     --gold-yellow: #ffd700;
+
 }
 
 Body {
-    background: url("./img/background.jpeg");
+    background: url("./img/background.jpeg") transparent;
     background-size: cover;
     color: white;
+    /* background: transparent; */
+}
+
+h1 {
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 800;
+    color: var(--purple);
+    text-align: center;
+    height: 100px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 5px 10px 0 var(--green);
+    font-size: 50px;
+}
+.riddles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button {
+    padding: 10px 20px;
+    color: var(--green);
+    background-color: var(--purple);
+    border: 3px solid var(--gold-yellow);
+    cursor: pointer;
+}
+button:active {
+    padding: 9px 19px;
+}
+
+p {
+    font-family: "Coveat", cursive;
+    color: var(--red);
+    font-size: 20px;
+    font-weight: 800;
 }
