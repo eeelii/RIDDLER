@@ -122,6 +122,7 @@ function resetGame() {
     submitBtn.innerHTML = "Submit Answer";
     btn.classList.add("redaybtn");
     userInput.value = "";
+    checkAnswer();
 }
 
 
