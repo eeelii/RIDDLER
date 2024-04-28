@@ -105,7 +105,7 @@ img {
 }
 
 .testLuck {
-    width: 250px;
+    width: 200px;
     height: 70px;
     text-align: center;
     border-radius: 10px 20px;
@@ -116,7 +116,4 @@ img {
     display: block;
     text-align: center;
     align-items: center;
-    /* border: 3px solid green; */
-    /* height: 100px; */
-
 }
