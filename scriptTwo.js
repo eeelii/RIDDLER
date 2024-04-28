@@ -125,7 +125,6 @@ function resetGame() {
     checkAnswer();
 }
 
-
 submitBtn.onclick = checkAnswer;
 
 displayQ();
