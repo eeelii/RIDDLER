@@ -37,6 +37,7 @@ h1 {
     height: 150px;
     padding: 50px;
 }
+
 button {
     padding: 10px 20px;
     color: var(--white);
@@ -52,7 +53,9 @@ button {
 button:active {
     padding: 9px 19px;
 }
-
+.readybtn {
+    display: none;
+}
 p {
     font-family: "Coveat", cursive;
     color: var(--white);

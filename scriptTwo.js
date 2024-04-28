@@ -4,7 +4,7 @@ const riddles = [
         answer: "A piano",
     },
     {
-        question: "What travels around then world while staying in a corner?",
+        question: "What travels around the world while staying in a corner?",
         answer: "A stamp",
     },
     {
@@ -42,7 +42,17 @@ const riddles = [
         answer: "An Onion",
     },
 ];
-
+const phrases = [
+    "Why so serious?",
+    "What doesn't kill you simply makes you stranger!",
+    "As you know, madness is like gravity: All it takes is a little push",
+    "If you’re good at something, never do it for free",
+    "When they treat you like a joke, leave them like it's funny",
+    "A joke a day keeps the gloom away!",
+    "Don't test the monster in me!"
+]
+// create a random number 
+const ranNum = Math.floor(Math.random()* phrases.length);
 // get the btn to start the game
 const btn = document.getElementById("Ready");
 // get the users input value
@@ -66,10 +76,12 @@ function updateScore() {
 // check if the answer is correct 
 function checkAnswer() {
     if (userInput.value.trim() === "") {
+        btn.classList.remove("readybtn");
         btn.innerHTML = "Must Answer First";
     } else {
         if(userInput.value.toLowerCase() === riddles[counter].answer.toLowerCase()) {
-            btn.innerHTML = "Next";
+            btn.classList.remove("readybtn");
+            btn.innerHTML = phrases[ranNum];
             scoreCounter++;
             updateScore();
             counter++;
@@ -91,11 +103,15 @@ function checkAnswer() {
         }
     }
 }
-
+// create a function that iterates through the phraseslst 
+function phrasesLst() {
+    while (scoreCounter > 0) {
+        btn.innerHTML = phrases[ranNum]
+    }
+}
 // create a function that displays the question when the button ready is hit
 function displayQ() {
     riddleQ.innerHTML = riddles[counter].question;
-
 }
 
 
