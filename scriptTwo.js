@@ -51,8 +51,7 @@ const phrases = [
     "A joke a day keeps the gloom away!",
     "Don't test the monster in me!"
 ]
-// create a random number 
-const ranNum = Math.floor(Math.random()* phrases.length);
+
 // get the btn to start the game
 const btn = document.getElementById("Ready");
 // get the users input value
@@ -79,13 +78,13 @@ function checkAnswer() {
         btn.classList.remove("readybtn");
         btn.innerHTML = "Must Answer First";
     } else {
-        if(userInput.value.toLowerCase() === riddles[counter].answer.toLowerCase()) {
+        if (userInput.value.toLowerCase() === riddles[counter].answer.toLowerCase()) {
             btn.classList.remove("readybtn");
-            btn.innerHTML = phrases[ranNum];
+            phrasesLst();
             scoreCounter++;
             updateScore();
             counter++;
-            if(counter === riddles.length) {
+            if (counter === riddles.length) {
                 counter = 0;
             }
             displayQ();
@@ -94,24 +93,35 @@ function checkAnswer() {
             btn.innerHTML = "Wrong Answer!";
             scoreCounter--;
             updateScore();
-            if (scoreCounter === 0){
+            userInput.value = "";
+            if (scoreCounter === 0) {
                 submitBtn.innerHTML = "hahaha you lost";
                 btn.innerHTML = "hahaha you lost";
-                counter = 0;
-                scoreCounter = 0;
+                resetGame();
             }
         }
     }
 }
 // create a function that iterates through the phraseslst 
 function phrasesLst() {
-    while (scoreCounter > 0) {
-        btn.innerHTML = phrases[ranNum]
-    }
+    // create a random number 
+    const ranNum = Math.floor(Math.random() * phrases.length);
+    btn.innerHTML = phrases[ranNum];
 }
 // create a function that displays the question when the button ready is hit
 function displayQ() {
     riddleQ.innerHTML = riddles[counter].question;
+}
+
+// create a function to reset the game when the score gets to zero 
+function resetGame() {
+    counter = 0;
+    scoreCounter = 0;
+    updateScore();
+    displayQ();
+    submitBtn.innerHTML = "Submit Answer";
+    btn.classList.add("redaybtn");
+    userInput.value = "";
 }
 
 
