@@ -86,21 +86,13 @@ function winnerMessage() {
   inputDiv.style.display = "none";
   // remove submit button and add new button
   submitBtn.style.display = "none";
-  // now retrieve the submit-button div
-  const subDiv = document.querySelector(".submit-button");
-  subDiv.appendChild(tryAgainBtn);
-}
-
-// create a function to restart the game once you've won once 
-function playAgain() {
-    // retrieve the answer div 
-    const inputDiv = document.querySelector(".answer");
+  setTimeout(function () {
     inputDiv.style.display = "";
     // remove submit button and add new button
     submitBtn.style.display = "";
-    tryAgainBtn.style.display = "none";
-    resetGame();
-  }
+  }, 4500);
+}
+
 // check if the answer is correct
 function checkAnswer() {
   if (userInput.value.trim() === "") {
@@ -123,7 +115,10 @@ function checkAnswer() {
       // update score once player reaches 3 points 
       if (scoreCounter === 3) {
         winnerMessage();
-        // resetGame();
+        setTimeout(function () {
+          resetGame();
+        }, 3500);
+
       }
     } else {
       btn.innerHTML = "Wrong Answer!";
@@ -133,7 +128,9 @@ function checkAnswer() {
       if (scoreCounter === 0) {
         submitBtn.innerHTML = "hahaha you lost";
         btn.innerHTML = "hahaha you lost";
-        resetGame();
+        setTimeout(function () {
+          resetGame();
+        }, 2500);
       }
     }
   }
