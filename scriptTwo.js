@@ -66,11 +66,15 @@ const submitBtn = document.getElementById("submitAnswer");
 let counter = 0;
 // update score
 let scoreCounter = 0;
-// create a button to use later to try again 
-const tryAgainBtn = document.createElement("button");
-// add an id to the button 
-tryAgainBtn.id = "tryBtn";
-tryAgainBtn.innerHTML = "Click if you dare";
+
+// create a function that shuffles the riddle array 
+function shuffleAr(arHere) {
+  for (let i = arHere.length -1; i > 0; i--) {
+    const j = Math.floor(Math.random()* (i+1));
+    [arHere[i], arHere[j]] = [arHere[j], arHere[i]];
+  }
+  return arHere;
+}
 
 // create a function that updates the score each time someone gets a question right
 function updateScore() {
@@ -95,6 +99,7 @@ function winnerMessage() {
 
 // check if the answer is correct
 function checkAnswer() {
+  const answerShuflle = shuffleAr(riddles).answer;
   if (userInput.value.trim() === "") {
     btn.classList.remove("readybtn");
     btn.innerHTML = "Must Answer First";
@@ -131,6 +136,12 @@ function checkAnswer() {
         setTimeout(function () {
           resetGame();
         }, 2500);
+      } else {
+        submitBtn.innerHTML = "hahaha you lost";
+        btn.innerHTML = "hahaha you lost";
+        setTimeout(function () {
+          resetGame();
+        }, 2500)
       }
     }
   }
@@ -143,7 +154,9 @@ function phrasesLst() {
 }
 // create a function that displays the question when the button ready is hit
 function displayQ() {
-  riddleQ.innerHTML = riddles[counter].question;
+  // riddleQ.innerHTML = riddles[counter].question;
+  const shuffleRiddle = shuffleAr(riddles);
+  riddleQ.innerHTML = shuffleRiddle[0].question;
 }
 
 // create a function to reset the game when the score gets to zero
@@ -169,4 +182,3 @@ audio.src = "click.mp3";
 // Making a transition for riddles to appear smoothly
 
 // start the game again if the player has won at least once 
-tryAgainBtn.onclick = playAgain;
