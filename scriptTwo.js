@@ -131,5 +131,9 @@ submitBtn.onclick = checkAnswer;
 
 displayQ();
 
+// Adding sound to submit button 
+const audio = new Audio();
+audio.src = "click.mp3";
+
 // Making a transition for riddles to appear smoothly
 
