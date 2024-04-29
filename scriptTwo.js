@@ -66,12 +66,41 @@ const submitBtn = document.getElementById("submitAnswer");
 let counter = 0;
 // update score
 let scoreCounter = 0;
+// create a button to use later to try again 
+const tryAgainBtn = document.createElement("button");
+// add an id to the button 
+tryAgainBtn.id = "tryBtn";
+tryAgainBtn.innerHTML = "Click if you dare";
 
 // create a function that updates the score each time someone gets a question right
 function updateScore() {
   score.innerHTML = scoreCounter;
 }
 
+// create a function that displays winner once a player reaches 3 points 
+function winnerMessage() {
+  btn.innerHTML = "Why so Serious";
+  riddleQ.innerHTML = "Let's see you try again";
+  // retrieve the answer div 
+  const inputDiv = document.querySelector(".answer");
+  inputDiv.style.display = "none";
+  // remove submit button and add new button
+  submitBtn.style.display = "none";
+  // now retrieve the submit-button div
+  const subDiv = document.querySelector(".submit-button");
+  subDiv.appendChild(tryAgainBtn);
+}
+
+// create a function to restart the game once you've won once 
+function playAgain() {
+    // retrieve the answer div 
+    const inputDiv = document.querySelector(".answer");
+    inputDiv.style.display = "";
+    // remove submit button and add new button
+    submitBtn.style.display = "";
+    tryAgainBtn.style.display = "none";
+    resetGame();
+  }
 // check if the answer is correct
 function checkAnswer() {
   if (userInput.value.trim() === "") {
@@ -91,6 +120,11 @@ function checkAnswer() {
       }
       displayQ();
       userInput.value = "";
+      // update score once player reaches 3 points 
+      if (scoreCounter === 3) {
+        winnerMessage();
+        // resetGame();
+      }
     } else {
       btn.innerHTML = "Wrong Answer!";
       scoreCounter--;
@@ -137,3 +171,5 @@ audio.src = "click.mp3";
 
 // Making a transition for riddles to appear smoothly
 
+// start the game again if the player has won at least once 
+tryAgainBtn.onclick = playAgain;
