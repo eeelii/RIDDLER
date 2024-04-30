@@ -115,13 +115,15 @@ function checkAnswer() {
           resetGame();
         }, 3500);
       }
-    } else if (userInput.value.toLowerCase() !== shuffleRiddle[0].answer.toLowerCase()) {
+    } else {
       btn.innerHTML = "Wrong Answer!";
       scoreCounter--;
       updateScore();
       userInput.value = "";
       displayQ();
-      if (scoreCounter === 0) {
+      if (scoreCounter < 1) {
+        scoreCounter = 0;
+        updateScore();
         submitBtn.innerHTML = "hahaha you lost";
         btn.innerHTML = "hahaha you lost";
         setTimeout(function () {
