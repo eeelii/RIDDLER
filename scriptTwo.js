@@ -69,8 +69,8 @@ let scoreCounter = 0;
 
 // create a function that shuffles the riddle array 
 function shuffleAr(arHere) {
-  for (let i = arHere.length -1; i > 0; i--) {
-    const j = Math.floor(Math.random()* (i+1));
+  for (let i = arHere.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
     [arHere[i], arHere[j]] = [arHere[j], arHere[i]];
   }
   return arHere;
@@ -99,13 +99,13 @@ function winnerMessage() {
 
 // check if the answer is correct
 function checkAnswer() {
-  const answerShuflle = shuffleAr(riddles).answer;
+  const answerShuflle = shuffleAr(riddles);
   if (userInput.value.trim() === "") {
     btn.classList.remove("readybtn");
     btn.innerHTML = "Must Answer First";
   } else {
     if (
-      userInput.value.toLowerCase() === riddles[counter].answer.toLowerCase()
+      userInput.value.toLowerCase() === answerQ()
     ) {
       btn.classList.remove("readybtn");
       phrasesLst();
@@ -157,6 +157,11 @@ function displayQ() {
   // riddleQ.innerHTML = riddles[counter].question;
   const shuffleRiddle = shuffleAr(riddles);
   riddleQ.innerHTML = shuffleRiddle[0].question;
+}
+// Create a function to check answer 
+function answerQ() {
+  const answerShuflle = shuffleAr(riddles);
+  return answerShuflle[0].answer.toLowerCase();
 }
 
 // create a function to reset the game when the score gets to zero
