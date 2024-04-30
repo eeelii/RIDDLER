@@ -101,10 +101,7 @@ function checkAnswer() {
   if (userInput.value.trim() === "") {
     btn.classList.remove("readybtn");
     btn.innerHTML = "Must Answer First";
-  } else {
-    if (
-      userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()
-    ) {
+  } else if (userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()){
       btn.classList.remove("readybtn");
       phrasesLst();
       scoreCounter++;
@@ -112,36 +109,36 @@ function checkAnswer() {
       displayQ();
       userInput.value = "";
       // update score once player reaches 3 points 
-      if (scoreCounter === 3) {
+      if (scoreCounter === 5) {
         winnerMessage();
         setTimeout(function () {
           resetGame();
         }, 3500);
-
       }
-    } else {
+    } else if (userInput.value.toLowerCase() !== shuffleRiddle[0].answer.toLowerCase()) {
       btn.innerHTML = "Wrong Answer!";
       scoreCounter--;
       updateScore();
       userInput.value = "";
+      displayQ();
       if (scoreCounter === 0) {
         submitBtn.innerHTML = "hahaha you lost";
         btn.innerHTML = "hahaha you lost";
         setTimeout(function () {
           resetGame();
         }, 2500);
-      } else {
-        submitBtn.innerHTML = "hahaha you lost";
-        btn.innerHTML = "hahaha you lost";
-        scoreCounter = 0;
-        updateScore();
-        setTimeout(function () {
-          resetGame();
-        }, 2500)
       }
     }
-  }
 }
+    // } else {
+    //     submitBtn.innerHTML = "hahaha you lost";
+    //     btn.innerHTML = "hahaha you lost";
+    //     scoreCounter = 0;
+    //     updateScore();
+    //     setTimeout(function () {
+    //       resetGame();
+    //     }, 2500)
+    //   }
 // create a function that iterates through the phraseslst
 function phrasesLst() {
   // create a random number
