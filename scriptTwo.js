@@ -130,15 +130,6 @@ function checkAnswer() {
       }
     }
 }
-    // } else {
-    //     submitBtn.innerHTML = "hahaha you lost";
-    //     btn.innerHTML = "hahaha you lost";
-    //     scoreCounter = 0;
-    //     updateScore();
-    //     setTimeout(function () {
-    //       resetGame();
-    //     }, 2500)
-    //   }
 // create a function that iterates through the phraseslst
 function phrasesLst() {
   // create a random number
