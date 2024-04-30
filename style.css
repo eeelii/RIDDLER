@@ -111,7 +111,7 @@ img {
   justify-content: center;
   /* border: 3px solid; */
   align-items: center;
-  /* column-gap: 50px; */
+  column-gap: 50px;
 }
 
 .testLuck {
@@ -132,5 +132,4 @@ img {
   display: block;
   text-align: center;
   align-items: center;
-  margin-bottom: -400px;
 }
