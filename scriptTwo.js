@@ -62,8 +62,6 @@ const score = document.getElementById("user-Score");
 const riddleQ = document.querySelector(".lstRiddle");
 // get submit element
 const submitBtn = document.getElementById("submitAnswer");
-// setup a counter
-let counter = 0;
 // update score
 let scoreCounter = 0;
 
@@ -111,10 +109,6 @@ function checkAnswer() {
       phrasesLst();
       scoreCounter++;
       updateScore();
-      counter++;
-      if (counter === riddles.length) {
-        counter = 0;
-      }
       displayQ();
       userInput.value = "";
       // update score once player reaches 3 points 
@@ -158,12 +152,9 @@ function phrasesLst() {
 const shuffleRiddle = shuffleAr(riddles);
 
 function displayQ() {
+  const shuffleRiddle = shuffleAr(riddles);
   // riddleQ.innerHTML = riddles[counter].question;
   riddleQ.innerHTML = shuffleRiddle[0].question;
-}
-// Create a function to check answer 
-function answerQ() {
-  return shuffleRiddle[0].answer.toLowerCase();
 }
 
 // create a function to reset the game when the score gets to zero
