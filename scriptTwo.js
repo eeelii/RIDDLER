@@ -79,11 +79,11 @@ function updateScore() {
   score.innerHTML = scoreCounter;
 }
 
-// create a function that displays winner once a player reaches 3 points 
+// create a function that displays winner once a player reaches 3 points
 function winnerMessage() {
   btn.innerHTML = "Why so Serious";
   riddleQ.innerHTML = "Let's see you try again";
-  // retrieve the answer div 
+  // retrieve the answer div
   const inputDiv = document.querySelector(".answer");
   inputDiv.style.display = "none";
   // remove submit button and add new button
@@ -163,7 +163,7 @@ submitBtn.onclick = checkAnswer;
 
 displayQ();
 
-// Adding sound to submit button 
+// Adding sound to submit button
 const audio = new Audio();
 audio.src = "click.mp3";
 
