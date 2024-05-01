@@ -42,6 +42,9 @@ const riddles = [
     answer: "An Onion",
   },
 ];
+
+
+
 const phrases = [
   "Why so serious?",
   "What doesn't kill you simply makes you stranger!",
@@ -51,6 +54,8 @@ const phrases = [
   "A joke a day keeps the gloom away!",
   "Don't test the monster in me!",
 ];
+
+
 
 // get the btn to start the game
 const btn = document.getElementById("Ready");
@@ -65,6 +70,8 @@ const submitBtn = document.getElementById("submitAnswer");
 // update score
 let scoreCounter = 0;
 
+
+
 // create a function that shuffles the riddle array 
 function shuffleAr(arHere) {
   for (let i = arHere.length - 1; i > 0; i--) {
@@ -74,10 +81,14 @@ function shuffleAr(arHere) {
   return arHere;
 }
 
+
+
 // create a function that updates the score each time someone gets a question right
 function updateScore() {
   score.innerHTML = scoreCounter;
 }
+
+
 
 // create a function that displays winner once a player reaches 3 points
 function winnerMessage() {
@@ -94,6 +105,8 @@ function winnerMessage() {
     submitBtn.style.display = "";
   }, 4500);
 }
+
+
 
 // check if the answer is correct
 function checkAnswer() {
@@ -132,20 +145,27 @@ function checkAnswer() {
       }
     }
 }
+
+
+
 // create a function that iterates through the phraseslst
 function phrasesLst() {
   // create a random number
   const ranNum = Math.floor(Math.random() * phrases.length);
   btn.innerHTML = phrases[ranNum];
 }
+
+
+
 // create a function that displays the question when the button ready is hit
 const shuffleRiddle = shuffleAr(riddles);
-
 function displayQ() {
   const shuffleRiddle = shuffleAr(riddles);
   // riddleQ.innerHTML = riddles[counter].question;
   riddleQ.innerHTML = shuffleRiddle[0].question;
 }
+
+
 
 // create a function to reset the game when the score gets to zero
 function resetGame() {
@@ -158,6 +178,8 @@ function resetGame() {
   userInput.value = "";
   checkAnswer();
 }
+
+
 
 submitBtn.onclick = checkAnswer;
 
