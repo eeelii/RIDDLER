@@ -24,6 +24,8 @@ fetch('./riddlesjson.json')
     const riddleQ = document.querySelector(".lstRiddle");
     // get submit element
     const submitBtn = document.getElementById("submitAnswer");
+    // get the body so you can change the background when needed 
+    const background = document.querySelector("body");
     // update score
     let scoreCounter = 0;
 
@@ -72,6 +74,7 @@ fetch('./riddlesjson.json')
         btn.innerHTML = "Must Answer First";
       } else if (userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()) {
         btn.classList.remove("readybtn");
+        background.style.backgroundImage = "url(./img/background.jpeg)";
         phrasesLst();
         scoreCounter++;
         updateScore();
@@ -86,6 +89,7 @@ fetch('./riddlesjson.json')
         }
       } else {
         btn.innerHTML = "Wrong Answer!";
+        background.style.backgroundImage = "url(./NewBackground.webp)";
         scoreCounter--;
         updateScore();
         userInput.value = "";
