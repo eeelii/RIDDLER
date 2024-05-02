@@ -11,6 +11,9 @@ fetch('./riddlesjson.json')
       "A joke a day keeps the gloom away!",
       "Don't test the monster in me!",
     ];
+
+
+
     // get the btn to start the game
     const btn = document.getElementById("Ready");
     // get the users input value
@@ -24,6 +27,7 @@ fetch('./riddlesjson.json')
     // update score
     let scoreCounter = 0;
 
+    
     // create a function to shuffle the riddles 
     function shuffleAr(arHere) {
       for (let i = arHere.length - 1; i > 0; i--) {
@@ -135,6 +139,8 @@ fetch('./riddlesjson.json')
 
     submitBtn.onclick = checkAnswer;
 
+
+    // call the displayQ function to display question on the dom 
     displayQ();
 
     // Adding sound to submit button
@@ -145,3 +151,6 @@ fetch('./riddlesjson.json')
   .catch(error => {
     console.error("Error fetching JSON:", error);
   });
+
+
+  
