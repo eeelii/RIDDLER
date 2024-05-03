@@ -1,3 +1,21 @@
+// get the ready button 
+const readyBtn = document.getElementById("Ready");
+// get main game div
+const mainGame = document.querySelector(".main-game");
+
+
+
+// create a function that will display the main-game content 
+function displayGame() {
+  mainGame.style.display = "flex";
+  readyBtn.style.display = "none";
+}
+readyBtn.onclick = displayGame;
+
+
+
+
+// create the functionality of the game 
 fetch('./riddlesjson.json')
   .then(response => response.json())
   .then(data => {
@@ -15,7 +33,7 @@ fetch('./riddlesjson.json')
 
 
     // get the btn to start the game
-    const btn = document.getElementById("Ready");
+    const btn = document.getElementById("message-joker");
     // get the users input value
     const userInput = document.getElementById("user-value");
     // get the score element
@@ -70,10 +88,10 @@ fetch('./riddlesjson.json')
     function checkAnswer() {
       // const answerShuflle = shuffleAr(riddles);
       if (userInput.value.trim() === "") {
-        btn.classList.remove("readybtn");
+        btn.classList.remove("message-btn");
         btn.innerHTML = "Must Answer First";
       } else if (userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()) {
-        btn.classList.remove("readybtn");
+        btn.classList.remove("message-btn");
         background.style.backgroundImage = "url(./img/background.jpeg)";
         phrasesLst();
         scoreCounter++;
@@ -134,7 +152,7 @@ fetch('./riddlesjson.json')
       updateScore();
       displayQ();
       submitBtn.innerHTML = "Submit Answer";
-      btn.classList.add("redaybtn");
+      btn.classList.add("message-btn");
       userInput.value = "";
       checkAnswer();
     }
