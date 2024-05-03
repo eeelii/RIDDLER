@@ -99,11 +99,11 @@ fetch('./riddlesjson.json')
         displayQ();
         userInput.value = "";
         // update score once player reaches 3 points 
-        if (scoreCounter === 5) {
+        if (scoreCounter === 3) {
           winnerMessage();
           setTimeout(function () {
             resetGame();
-          }, 3500);
+          }, 2500);
         }
       } else {
         btn.innerHTML = "Wrong Answer!";
@@ -113,13 +113,14 @@ fetch('./riddlesjson.json')
         userInput.value = "";
         displayQ();
         if (scoreCounter < 1) {
+          riddleQ.innerHTML = "";
           scoreCounter = 0;
           updateScore();
           submitBtn.innerHTML = "hahaha you lost";
           btn.innerHTML = "hahaha you lost";
           setTimeout(function () {
             resetGame();
-          }, 2500);
+          }, 1000);
         }
       }
     }
@@ -147,6 +148,8 @@ fetch('./riddlesjson.json')
 
     // create a function to reset the game when the score gets to zero
     function resetGame() {
+      mainGame.style.display = "";
+      readyBtn.style.display = "";
       counter = 0;
       scoreCounter = 0;
       updateScore();
@@ -154,6 +157,7 @@ fetch('./riddlesjson.json')
       submitBtn.innerHTML = "Submit Answer";
       btn.classList.add("message-btn");
       userInput.value = "";
+      background.style.backgroundImage = "url(./img/background.jpeg)";
       checkAnswer();
     }
 
