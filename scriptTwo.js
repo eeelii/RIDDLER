@@ -2,6 +2,8 @@
 const readyBtn = document.getElementById("Ready");
 // get main game div
 const mainGame = document.querySelector(".main-game");
+// select the ready-content element 
+const readContent = document.querySelector(".ready-content");
 
 
 
@@ -9,6 +11,7 @@ const mainGame = document.querySelector(".main-game");
 function displayGame() {
   mainGame.style.display = "flex";
   readyBtn.style.display = "none";
+  readContent.style.display = "none";
 }
 readyBtn.onclick = displayGame;
 
@@ -158,7 +161,9 @@ fetch('./riddlesjson.json')
       btn.classList.add("message-btn");
       userInput.value = "";
       background.style.backgroundImage = "url(./img/background.jpeg)";
+      readContent.style.display = "flex";
       checkAnswer();
+    
     }
 
 
