@@ -102,7 +102,7 @@ fetch('./riddlesjson.json')
         displayQ();
         userInput.value = "";
         // update score once player reaches 3 points 
-        if (scoreCounter === 3) {
+        if (scoreCounter === 5) {
           winnerMessage();
           setTimeout(function () {
             resetGame();
@@ -135,6 +135,7 @@ fetch('./riddlesjson.json')
       // create a random number
       const ranNum = Math.floor(Math.random() * phrases.length);
       btn.innerHTML = phrases[ranNum];
+      btn.style.cursor = "arrow";
     }
 
 
