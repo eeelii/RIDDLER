@@ -1,24 +1,19 @@
-// get the ready button 
+// get the ready button
 const readyBtn = document.getElementById("Ready");
 // get main game div
-const mainGame = document.querySelector(".main-game");
+const mainGame = document.querySelector(".main__game");
 
-
-
-// create a function that will display the main-game content 
+// create a function that will display the main-game content
 function displayGame() {
   mainGame.style.display = "flex";
   readyBtn.style.display = "none";
 }
 readyBtn.onclick = displayGame;
 
-
-
-
-// create the functionality of the game 
-fetch('./riddlesjson.json')
-  .then(response => response.json())
-  .then(data => {
+// create the functionality of the game
+fetch("./riddlesjson.json")
+  .then((response) => response.json())
+  .then((data) => {
     const riddles = data;
     const phrases = [
       "Why so serious?",
@@ -30,8 +25,6 @@ fetch('./riddlesjson.json')
       "Don't test the monster in me!",
     ];
 
-
-
     // get the btn to start the game
     const btn = document.getElementById("message-joker");
     // get the users input value
@@ -42,13 +35,12 @@ fetch('./riddlesjson.json')
     const riddleQ = document.querySelector(".lstRiddle");
     // get submit element
     const submitBtn = document.getElementById("submitAnswer");
-    // get the body so you can change the background when needed 
+    // get the body so you can change the background when needed
     const background = document.querySelector("body");
     // update score
     let scoreCounter = 0;
 
-    
-    // create a function to shuffle the riddles 
+    // create a function to shuffle the riddles
     function shuffleAr(arHere) {
       for (let i = arHere.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -57,14 +49,10 @@ fetch('./riddlesjson.json')
       return arHere;
     }
 
-
-
     // create a function that updates the score each time someone gets a question right
     function updateScore() {
       score.innerHTML = scoreCounter;
     }
-
-
 
     // create a function that displays winner once a player reaches 3 points
     function winnerMessage() {
@@ -82,15 +70,15 @@ fetch('./riddlesjson.json')
       }, 4500);
     }
 
-
-
     // check if the answer is correct
     function checkAnswer() {
       // const answerShuflle = shuffleAr(riddles);
       if (userInput.value.trim() === "") {
         btn.classList.remove("message-btn");
         btn.innerHTML = "Must Answer First";
-      } else if (userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()) {
+      } else if (
+        userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()
+      ) {
         btn.classList.remove("message-btn");
         background.style.backgroundImage = "url(./img/background.jpeg)";
         phrasesLst();
@@ -98,7 +86,7 @@ fetch('./riddlesjson.json')
         updateScore();
         displayQ();
         userInput.value = "";
-        // update score once player reaches 3 points 
+        // update score once player reaches 3 points
         if (scoreCounter === 3) {
           winnerMessage();
           setTimeout(function () {
@@ -125,16 +113,12 @@ fetch('./riddlesjson.json')
       }
     }
 
-
-
     // create a function that iterates through the phraseslst
     function phrasesLst() {
       // create a random number
       const ranNum = Math.floor(Math.random() * phrases.length);
       btn.innerHTML = phrases[ranNum];
     }
-
-
 
     // create a function that displays the question when the button ready is hit
     const shuffleRiddle = shuffleAr(riddles);
@@ -143,8 +127,6 @@ fetch('./riddlesjson.json')
       // riddleQ.innerHTML = riddles[counter].question;
       riddleQ.innerHTML = shuffleRiddle[0].question;
     }
-
-
 
     // create a function to reset the game when the score gets to zero
     function resetGame() {
@@ -161,22 +143,16 @@ fetch('./riddlesjson.json')
       checkAnswer();
     }
 
-
-
     submitBtn.onclick = checkAnswer;
 
-
-    // call the displayQ function to display question on the dom 
+    // call the displayQ function to display question on the dom
     displayQ();
 
     // Adding sound to submit button
     const audio = new Audio();
     audio.src = "click.mp3";
   })
-  
-  .catch(error => {
+
+  .catch((error) => {
     console.error("Error fetching JSON:", error);
   });
-
-
-  
