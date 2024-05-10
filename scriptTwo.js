@@ -6,7 +6,21 @@ const mainGame = document.querySelector(".main-game");
 const readContent = document.querySelector(".ready-content");
 
 
+// create a variable for each sound 
+const correctSound = new Audio("click.mp3");
+const wrongSound = new Audio("gameOver.wav");
+const winSound = new Audio("");
+const loseSound = new Audio("");
 
+
+// now create a function for each sound 
+function playWrong() {
+  wrongSound.play();
+}
+
+function playSound() {
+  correctSound.play();
+}
 // create a function that will display the main-game content 
 function displayGame() {
   mainGame.style.display = "flex";
@@ -94,6 +108,7 @@ fetch('./riddlesjson.json')
         btn.classList.remove("message-btn");
         btn.innerHTML = "Must Answer First";
       } else if (userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()) {
+        playSound();
         btn.classList.remove("message-btn");
         background.style.backgroundImage = "url(./img/background.jpeg)";
         phrasesLst();
@@ -109,6 +124,7 @@ fetch('./riddlesjson.json')
           }, 2500);
         }
       } else {
+        playWrong();
         btn.innerHTML = "Wrong Answer!";
         background.style.backgroundImage = "url(./NewBackground.webp)";
         scoreCounter--;
