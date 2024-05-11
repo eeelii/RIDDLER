@@ -145,7 +145,6 @@ fetch("./riddlesjson.json")
       background.style.backgroundImage = "url(./img/background.jpeg)";
       readContent.style.display = "flex";
       checkAnswer();
-    
     }
 
     submitBtn.onclick = checkAnswer;
