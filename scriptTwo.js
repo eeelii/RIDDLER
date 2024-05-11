@@ -1,33 +1,9 @@
 // get the ready button
 const readyBtn = document.getElementById("Ready");
 // get main game div
-<<<<<<< HEAD
 const mainGame = document.querySelector(".main__game");
 
 // create a function that will display the main-game content
-=======
-const mainGame = document.querySelector(".main-game");
-// select the ready-content element 
-const readContent = document.querySelector(".ready-content");
-
-
-// create a variable for each sound 
-const correctSound = new Audio("click.mp3");
-const wrongSound = new Audio("gameOver.wav");
-const winSound = new Audio("");
-const loseSound = new Audio("");
-
-
-// now create a function for each sound 
-function playWrong() {
-  wrongSound.play();
-}
-
-function playSound() {
-  correctSound.play();
-}
-// create a function that will display the main-game content 
->>>>>>> a31adb544db0f60d74ae54255c6c61d8d177854a
 function displayGame() {
   mainGame.style.display = "flex";
   readyBtn.style.display = "none";
@@ -101,14 +77,9 @@ fetch("./riddlesjson.json")
       if (userInput.value.trim() === "") {
         btn.classList.remove("message-btn");
         btn.innerHTML = "Must Answer First";
-<<<<<<< HEAD
       } else if (
         userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()
       ) {
-=======
-      } else if (userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()) {
-        playSound();
->>>>>>> a31adb544db0f60d74ae54255c6c61d8d177854a
         btn.classList.remove("message-btn");
         background.style.backgroundImage = "url(./img/background.jpeg)";
         phrasesLst();
@@ -116,13 +87,8 @@ fetch("./riddlesjson.json")
         updateScore();
         displayQ();
         userInput.value = "";
-<<<<<<< HEAD
         // update score once player reaches 3 points
         if (scoreCounter === 3) {
-=======
-        // update score once player reaches 3 points 
-        if (scoreCounter === 5) {
->>>>>>> a31adb544db0f60d74ae54255c6c61d8d177854a
           winnerMessage();
           setTimeout(function () {
             resetGame();
@@ -179,7 +145,6 @@ fetch("./riddlesjson.json")
       background.style.backgroundImage = "url(./img/background.jpeg)";
       readContent.style.display = "flex";
       checkAnswer();
-    
     }
 
     submitBtn.onclick = checkAnswer;

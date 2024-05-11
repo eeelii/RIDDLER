@@ -16,11 +16,7 @@ Body {
   color: white;
   /* background: transparent; */
 }
-/* .main-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
+
 .header__content {
   display: flex;
   flex-direction: column;
@@ -28,27 +24,13 @@ Body {
   padding-left: 150px;
   margin-top: 45px;
 }
-<<<<<<< HEAD
 .main__game {
-=======
-
-.ready-content {
-  margin: 40px 0;
-  width: 50%;
-  height: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.main-game {
->>>>>>> a31adb544db0f60d74ae54255c6c61d8d177854a
-  width: 100%;
+  max-width: 100%;
   display: none;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  margin-top: 100px;
 }
 
 h1 {
@@ -77,13 +59,12 @@ h1 {
 .riddles {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   /* border: 2px solid yellow; */
   width: 50%;
   height: 150px;
-  /* margin-top:px; */
   padding: 50px;
-  margin: 30px 0;
+  margin-top: 250px;
 }
 
 button {
@@ -102,10 +83,16 @@ button {
 button:active {
   padding: 9px 19px;
 }
-/* .message-btn {
+.message-btn {
   display: none;
-  border: 1px solid red;
-} */
+}
+
+.riddles__message {
+  align-self: flex-end;
+  margin-right: 250px;
+  margin-top: -190px;
+  margin-bottom: 75px;
+}
 p {
   font-family: "Coveat", cursive;
   color: var(--white);
@@ -132,6 +119,10 @@ img {
   text-align: center;
   border-radius: 10px 20px;
   padding: 0 20px;
+  margin-top: 45px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  /* font-weight: 800; */
+  font-size: 18px;
 }
 
 .userAnswer:hover {
@@ -159,7 +150,7 @@ img {
   justify-content: space-evenly;
   /* border: 3px solid; */
   align-items: center;
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 .testLuck {
