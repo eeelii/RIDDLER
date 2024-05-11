@@ -9,10 +9,9 @@ const mainGame = document.querySelector(".main__game");
 const readContent = document.querySelector(".ready-content");
 
 // create a function that will display the main-game content
-
 // create a variable for each sound
-const correctSound = new Audio("click.mp3");
-const wrongSound = new Audio("gameOver.wav");
+const correctSound = new Audio("./sounds/its-all-part-of-the-plan.mp3");
+const wrongSound = new Audio("./sounds/joker_whysoserious.mp3");
 const winSound = new Audio("");
 const loseSound = new Audio("");
 
