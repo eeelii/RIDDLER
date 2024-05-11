@@ -21,8 +21,8 @@
       <!-- create a div that contains the main game  -->
       <main class="main__game">
         <!-- create a div to store the content of the riddle  -->
-        <div class="riddles">
-          <button class="message-btn" id="message-joker">I'm Ready</button>
+        <section class="riddles">
+          <button class="riddles__message message-btn" id="message-joker">I'm Ready</button>
           <p class="lstRiddle fade"></p>
         </div>
         <div class="answer">
@@ -39,8 +39,7 @@
               alt="joker face"
             />
           </div>
-        </div>
-        <br />
+        </section>
         <div class="submit-button">
           <button
             class="testLuck glow__on-hover"
@@ -49,7 +48,7 @@
           >
             Testing my luck
           </button>
-          <h2>Score</h2>
+          <h2 class="score-content">Score:</h2>
           <p id="user-Score">0</p>
         </div>
         <audio id="wrongAnswerSound" src="gameOver.wav"></audio>
