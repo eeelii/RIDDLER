@@ -1,12 +1,41 @@
 // get the ready button
 const readyBtn = document.getElementById("Ready");
 // get main game div
-const mainGame = document.querySelector(".main-game");
+<<<<<<< HEAD
+const mainGame = document.querySelector(".main__game");
 
 // create a function that will display the main-game content
+=======
+const mainGame = document.querySelector(".main-game");
+// select the ready-content element 
+const readContent = document.querySelector(".ready-content");
+
+<<<<<<< HEAD
+// create a function that will display the main-game content
+=======
+
+// create a variable for each sound 
+const correctSound = new Audio("click.mp3");
+const wrongSound = new Audio("gameOver.wav");
+const winSound = new Audio("");
+const loseSound = new Audio("");
+
+
+// now create a function for each sound 
+function playWrong() {
+  wrongSound.play();
+}
+
+function playSound() {
+  correctSound.play();
+}
+// create a function that will display the main-game content 
+>>>>>>> a31adb544db0f60d74ae54255c6c61d8d177854a
+>>>>>>> 671786665ba8d61177443866527110f7f9a70287
 function displayGame() {
   mainGame.style.display = "flex";
   readyBtn.style.display = "none";
+  readContent.style.display = "none";
 }
 readyBtn.onclick = displayGame;
 
@@ -76,9 +105,20 @@ fetch("./riddlesjson.json")
       if (userInput.value.trim() === "") {
         btn.classList.remove("message-btn");
         btn.innerHTML = "Must Answer First";
+<<<<<<< HEAD
       } else if (
         userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()
       ) {
+=======
+<<<<<<< HEAD
+      } else if (
+        userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()
+      ) {
+=======
+      } else if (userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()) {
+        playSound();
+>>>>>>> a31adb544db0f60d74ae54255c6c61d8d177854a
+>>>>>>> 671786665ba8d61177443866527110f7f9a70287
         btn.classList.remove("message-btn");
         background.style.backgroundImage = "url(./img/joker_inChair.png)";
         phrasesLst();
@@ -86,14 +126,23 @@ fetch("./riddlesjson.json")
         updateScore();
         displayQ();
         userInput.value = "";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 671786665ba8d61177443866527110f7f9a70287
         // update score once player reaches 3 points
         if (scoreCounter === 3) {
+=======
+        // update score once player reaches 3 points 
+        if (scoreCounter === 5) {
+>>>>>>> a31adb544db0f60d74ae54255c6c61d8d177854a
           winnerMessage();
           setTimeout(function () {
             resetGame();
           }, 2500);
         }
       } else {
+        playWrong();
         btn.innerHTML = "Wrong Answer!";
         background.style.backgroundImage = "url(./NewBackground.webp)";
         scoreCounter--;
@@ -118,6 +167,7 @@ fetch("./riddlesjson.json")
       // create a random number
       const ranNum = Math.floor(Math.random() * phrases.length);
       btn.innerHTML = phrases[ranNum];
+      btn.style.cursor = "arrow";
     }
 
     // create a function that displays the question when the button ready is hit
@@ -140,7 +190,9 @@ fetch("./riddlesjson.json")
       btn.classList.add("message-btn");
       userInput.value = "";
       background.style.backgroundImage = "url(./img/background.jpeg)";
+      readContent.style.display = "flex";
       checkAnswer();
+    
     }
 
     submitBtn.onclick = checkAnswer;

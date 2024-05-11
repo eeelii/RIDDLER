@@ -16,16 +16,39 @@ Body {
   color: white;
   /* background: transparent; */
 }
-.main-content {
+/* .main-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+} */
+.header__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 150px;
+  margin-top: 45px;
 }
+<<<<<<< HEAD
+.main__game {
+=======
+
+.ready-content {
+  margin: 40px 0;
+  width: 50%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .main-game {
+>>>>>>> a31adb544db0f60d74ae54255c6c61d8d177854a
   width: 100%;
   display: none;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
 }
 
 h1 {
@@ -37,38 +60,52 @@ h1 {
   letter-spacing: 2px;
   text-transform: uppercase;
   text-shadow: 5px 10px 0 var(--green);
-  font-size: 50px;
+  font-size: 75px;
 }
 
+.ready__btn {
+  margin-left: 257px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 800;
+}
+.ready__btn:hover {
+  background-color: var(--green);
+  transition: 0.5s ease-in-out;
+  opacity: 90%;
+}
 /* Design riddle box  */
 .riddles {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   /* border: 2px solid yellow; */
   width: 50%;
   height: 150px;
+  /* margin-top:px; */
   padding: 50px;
+  margin: 30px 0;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 20px 20px;
   color: var(--white);
   background-color: var(--purple);
   border: 3px solid var(--green);
   cursor: pointer;
   /* height: 100px; */
   /* width: 100px; */
-  border-radius: 20px;
+  border-radius: 30px;
   font-size: 20px;
   /* box-shadow: 5px 2px 6px var(--green); */
 }
+
 button:active {
   padding: 9px 19px;
 }
-.message-btn {
+/* .message-btn {
   display: none;
-}
+  border: 1px solid red;
+} */
 p {
   font-family: "Coveat", cursive;
   color: var(--white);
@@ -119,10 +156,10 @@ img {
 .submit-button {
   width: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   /* border: 3px solid; */
   align-items: center;
-  column-gap: 50px;
+  margin-top: 100px;
 }
 
 .testLuck {
@@ -138,9 +175,9 @@ img {
 .testLuck:hover {
   transform: scale(1.1);
 }
-
+/* 
 .score-content {
   display: block;
   text-align: center;
   align-items: center;
-}
+} */
