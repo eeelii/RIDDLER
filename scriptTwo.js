@@ -4,6 +4,28 @@ const readyBtn = document.getElementById("Ready");
 const mainGame = document.querySelector(".main__game");
 
 // create a function that will display the main-game content
+
+// select the ready-content element
+const readContent = document.querySelector(".ready-content");
+
+// create a function that will display the main-game content
+
+// create a variable for each sound
+const correctSound = new Audio("click.mp3");
+const wrongSound = new Audio("gameOver.wav");
+const winSound = new Audio("");
+const loseSound = new Audio("");
+
+// now create a function for each sound
+function playWrong() {
+  wrongSound.play();
+}
+
+function playSound() {
+  correctSound.play();
+}
+// create a function that will display the main-game content
+
 function displayGame() {
   mainGame.style.display = "flex";
   readyBtn.style.display = "none";
@@ -80,13 +102,22 @@ fetch("./riddlesjson.json")
       } else if (
         userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()
       ) {
+      } else if (
+        userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()
+      ) {
+      } else if (
+        userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()
+      ) {
+        playSound();
+
         btn.classList.remove("message-btn");
-        background.style.backgroundImage = "url(./img/background.jpeg)";
+        background.style.backgroundImage = "url(./img/joker_inChair.png)";
         phrasesLst();
         scoreCounter++;
         updateScore();
         displayQ();
         userInput.value = "";
+
         // update score once player reaches 3 points
         if (scoreCounter === 3) {
           winnerMessage();
