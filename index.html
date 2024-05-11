@@ -7,7 +7,6 @@
     <title>Riddle Me this</title>
   </head>
 
-<<<<<<< HEAD
   <body>
     <div class="main-content">
       <!-- create the header -->
@@ -22,44 +21,9 @@
       <!-- create a div that contains the main game  -->
       <main class="main__game">
         <!-- create a div to store the content of the riddle  -->
-        <div class="riddles">
-          <button class="message-btn" id="message-joker">I'm Ready</button>
+        <section class="riddles">
+          <button class="riddles__message message-btn" id="message-joker">I'm Ready</button>
           <p class="lstRiddle fade"></p>
-=======
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Riddle Me this</title>
-</head>
-
-<body>
-  <div class="main-content">
-    <!-- create the header -->
-    <h1 class="glitch">
-      <span aria-hidden="true">Riddle Me This!!</span>
-      Riddle Me This!!
-      <span aria-hidden="true">Riddle Me This!!</span>
-    </h1>
-
-
-    <div class="ready-content">
-      <h1>How to play</h1>
-      <p>provide  a single word answer to earn points</p>
-      <button class="readybtn" id="Ready">Ready</button>
-    </div>
-    <!-- create a div that contains the main game  -->
-    <div class="main-game">
-      <!-- create a div to store the content of the riddle  -->
-      <div class="riddles">
-        <button class="message-btn" id="message-joker">I'm Ready</button>
-        <p class="lstRiddle fade"></p>
-      </div>
-      <div class="answer">
-        <div class="image-manipulation">
-          <input class="userAnswer" id="user-value" type="text" placeholder="Answer if you dare" />
-          <img class="png1" src="https://pngfre.com/wp-content/uploads/Joker-21.png" alt="joker face" />
->>>>>>> a31adb544db0f60d74ae54255c6c61d8d177854a
         </div>
         <div class="answer">
           <div class="image-manipulation">
@@ -75,8 +39,7 @@
               alt="joker face"
             />
           </div>
-        </div>
-        <br />
+        </section>
         <div class="submit-button">
           <button
             class="testLuck glow__on-hover"
@@ -85,16 +48,11 @@
           >
             Testing my luck
           </button>
-          <h2>Score</h2>
+          <h2 class="score-content">Score:</h2>
           <p id="user-Score">0</p>
         </div>
-<<<<<<< HEAD
         <audio id="wrongAnswerSound" src="gameOver.wav"></audio>
       </main>
-=======
-      </div>
-      <!-- <audio id="wrongAnswerSound" src="gameOver.wav"></audio> -->
->>>>>>> a31adb544db0f60d74ae54255c6c61d8d177854a
     </div>
 
     <script src="scriptTwo.js"></script>
