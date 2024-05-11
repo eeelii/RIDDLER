@@ -28,22 +28,7 @@ Body {
   padding-left: 150px;
   margin-top: 45px;
 }
-<<<<<<< HEAD
 .main__game {
-=======
-
-.ready-content {
-  margin: 40px 0;
-  width: 50%;
-  height: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.main-game {
->>>>>>> a31adb544db0f60d74ae54255c6c61d8d177854a
   width: 100%;
   display: none;
   flex-direction: column;
