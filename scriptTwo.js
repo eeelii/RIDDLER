@@ -10,9 +10,11 @@ const readyContent = document.querySelector(".ready-content");
 // create a function that will display the main-game content
 function displayGame() {
   playReady();
-  mainGame.style.display = "flex";
   readyBtn.style.display = "none";
   readyContent.style.display = "none";
+  setTimeout(function() {
+    mainGame.style.display = "flex";
+  },3000)
 }
 readyBtn.onclick = displayGame;
 
