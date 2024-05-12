@@ -125,13 +125,7 @@ fetch("./riddlesjson.json")
         btn.innerHTML = "Must Answer First";
       } else if (
         userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()
-      ) {
-      } else if (
-        userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()
-      ) {
-      } else if (
-        userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()
-      ) {
+      ){
         playSound();
 
         btn.classList.remove("message-btn");
