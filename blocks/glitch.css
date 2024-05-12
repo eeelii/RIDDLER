@@ -82,3 +82,11 @@
     transition-delay: 0s !important;
   }
 }
+
+@media screen and (min-width: 320px) and (max-width: 620px) {
+  .glitch {
+    font-size: xx-large;
+    text-align: center;
+    font-size: 50px;
+  }
+}
