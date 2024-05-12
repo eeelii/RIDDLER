@@ -13,7 +13,7 @@
 Body {
   background: url("./img/background.jpeg");
   background-size: cover;
-  color: white;
+  color: #fff;
   /* background: transparent; */
 }
 
@@ -25,7 +25,7 @@ Body {
   margin-top: 45px;
 }
 .main__game {
-  width: 100%;
+  max-width: 100%;
   display: none;
   flex-direction: column;
   align-items: center;
@@ -36,7 +36,7 @@ Body {
 h1 {
   font-family: "Nanum Gothic", sans-serif;
   font-weight: 800;
-  color: var(--red);
+  color: var(--purple);
   text-align: left;
   height: 100px;
   letter-spacing: 2px;
@@ -49,7 +49,6 @@ h1 {
   margin-left: 257px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: 800;
-  color: #ffd700;
 }
 .ready__btn:hover {
   background-color: var(--green);
@@ -59,7 +58,7 @@ h1 {
 /* Design riddle box  */
 .riddles {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   /* border: 2px solid yellow; */
   width: 50%;
@@ -90,8 +89,9 @@ button:active {
 
 .riddles__message {
   align-self: center;
-  color: var(--purple);
-  border-bottom: 1px solid #ff0000;
+  color: var(--white);
+  text-shadow: 2px 2px 0 var(--purple);
+  border-bottom: 1px solid #00ff00;
 }
 p {
   font-family: "Coveat", cursive;
@@ -120,10 +120,10 @@ img {
   border-radius: 10px 20px;
   padding: 0 20px;
   margin-top: 45px;
+  color: #595959;
   font-family: Georgia, "Times New Roman", Times, serif;
   /* font-weight: 800; */
   font-size: 18px;
-  color: gray;
 }
 
 .userAnswer:hover {
@@ -168,8 +168,8 @@ img {
   transform: scale(1.1);
 }
 
-.score-content {
+/* .score-content {
   display: block;
   text-align: center;
   align-items: center;
-}
+} */

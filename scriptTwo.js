@@ -5,38 +5,47 @@ const mainGame = document.querySelector(".main__game");
 
 // create a function that will display the main-game content
 
-// select the ready-content element
-const readContent = document.querySelector(".ready-content");
-
-// create a function that will display the main-game content
-// create a variable for each sound
-const correctSound = new Audio("./sounds/its-all-part-of-the-plan.mp3");
-const wrongSound = new Audio("./sounds/joker_whysoserious.mp3");
-const readySound = new Audio("./sounds/and-here-we-go-joker.mp3");
-const loseSound = new Audio("./sounds/lets-put-a-smile-on-that-face.mp3");
-
-// now create a function for each sound
-function playWrong() {
-  wrongSound.play();
-}
-
-function playSound() {
-  correctSound.play();
-}
-function playReady() {
-  readySound.play();
-}
-function loseSound(){
-  loseSound.play();
-}
-// create a function that will display the main-game content
-
 function displayGame() {
   mainGame.style.display = "flex";
   readyBtn.style.display = "none";
   readContent.style.display = "none";
 }
 readyBtn.onclick = displayGame;
+
+// select the ready-content element
+// const readContent = document.querySelector(".ready-content");
+
+//------------------------ this code has to go after the display game function -----------------------------------------
+
+// create a function that will display the main-game content
+// create a variable for each sound
+// const correctSound = new Audio("./sounds/its-all-part-of-the-plan.mp3");
+// const wrongSound = new Audio("./sounds/joker_whysoserious.mp3");
+// const readySound = new Audio("./sounds/and-here-we-go-joker.mp3");
+// const loseSound = new Audio("./sounds/lets-put-a-smile-on-that-face.mp3");
+
+// // now create a function for each sound
+// function playWrong() {
+//   wrongSound.play();
+// }
+
+// function playSound() {
+//   correctSound.play();
+// }
+// function playReady() {
+//   readySound.play();
+// }
+// function loseSound() {
+//   loseSound.play();
+// }
+// create a function that will display the main-game content
+
+// function displayGame() {
+//   mainGame.style.display = "flex";
+//   readyBtn.style.display = "none";
+//   readContent.style.display = "none";
+// }
+// readyBtn.onclick = displayGame;
 
 // create the functionality of the game
 fetch("./riddlesjson.json")
