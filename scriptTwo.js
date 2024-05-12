@@ -31,20 +31,22 @@ const loseSound = new Audio("./sounds/lets-put-a-smile-on-that-face.mp3");
 // // now create a function for each sound
 function playWrong() {
   wrongSound.play();
-}
+};
 
 function playSound() {
   correctSound.play();
-}
+};
 
 
 function playReady() {
   readySound.play();
-}
+};
 
-// function loseSound() {
-//   loseSound.play();
-// }
+
+
+function playLose() {
+  loseSound.play();
+};
 
 // create a function that will display the main-game content
 
