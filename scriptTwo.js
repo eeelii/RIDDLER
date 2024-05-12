@@ -9,7 +9,7 @@ const readyContent = document.querySelector(".ready-content");
 
 // create a function that will display the main-game content
 function displayGame() {
-  // playReady();
+  playReady();
   mainGame.style.display = "flex";
   readyBtn.style.display = "none";
   readyContent.style.display = "none";
@@ -28,7 +28,7 @@ const wrongSound = new Audio("./sounds/joker_whysoserious.mp3");
 const readySound = new Audio("./sounds/and-here-we-go-joker.mp3");
 const loseSound = new Audio("./sounds/lets-put-a-smile-on-that-face.mp3");
 
-// now create a function for each sound
+// // now create a function for each sound
 function playWrong() {
   wrongSound.play();
 }
@@ -36,13 +36,15 @@ function playWrong() {
 function playSound() {
   correctSound.play();
 }
+
+
 function playReady() {
   readySound.play();
 }
 
-function loseSound() {
-  loseSound.play();
-}
+// function loseSound() {
+//   loseSound.play();
+// }
 
 // create a function that will display the main-game content
 
