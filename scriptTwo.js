@@ -2,13 +2,15 @@
 const readyBtn = document.getElementById("Ready");
 // get main game div
 const mainGame = document.querySelector(".main__game");
-
+// get-ready content 
+const readyContent = document.querySelector(".ready-content");
 // create a function that will display the main-game content
 
 function displayGame() {
+
   mainGame.style.display = "flex";
   readyBtn.style.display = "none";
-  readContent.style.display = "none";
+  readyContent.style.display = "none";
 }
 readyBtn.onclick = displayGame;
 
