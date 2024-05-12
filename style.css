@@ -88,10 +88,9 @@ button:active {
 }
 
 .riddles__message {
-  align-self: flex-end;
-  margin-right: 250px;
-  margin-top: -190px;
-  margin-bottom: 75px;
+  align-self: center;
+  color: var(--purple);
+  border-bottom: 1px solid #ff0000;
 }
 p {
   font-family: "Coveat", cursive;
@@ -166,8 +165,8 @@ img {
 .testLuck:hover {
   transform: scale(1.1);
 }
-/* 
-.score-content {
+
+/* .score-content {
   display: block;
   text-align: center;
   align-items: center;
