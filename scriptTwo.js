@@ -159,7 +159,7 @@ fetch("./riddlesjson.json")
           btn.innerHTML = "hahaha you lost";
           setTimeout(function () {
             resetGame();
-          }, 1000);
+          }, 2900);
         }
       }
     }
