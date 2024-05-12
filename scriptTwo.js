@@ -26,10 +26,10 @@ readyBtn.onclick = displayGame;
 // create a function that will display the main-game content
 // create a variable for each sound
 const correctSound = new Audio("./sounds/its-all-part-of-the-plan.mp3");
-const wrongSound = new Audio("./sounds/joker_whysoserious.mp3");
+const wrongSound = new Audio("./sounds/joker-laugh.mp3");
 const readySound = new Audio("./sounds/and-here-we-go-joker.mp3");
 const loseSound = new Audio("./sounds/lets-put-a-smile-on-that-face.mp3");
-
+const winnerSound = new Audio("./sounds/joke-good-evening.mp3")
 // // now create a function for each sound
 function playWrong() {
   wrongSound.play();
@@ -49,6 +49,10 @@ function playReady() {
 function playLose() {
   loseSound.play();
 };
+
+function playWinner() {
+  winnerSound.play();
+}
 
 // create a function that will display the main-game content
 
@@ -105,6 +109,7 @@ fetch("./riddlesjson.json")
 
     // create a function that displays winner once a player reaches 3 points
     function winnerMessage() {
+      playWinner();
       btn.innerHTML = "Why so Serious";
       riddleQ.innerHTML = "Let's see you try again";
       // retrieve the answer div
@@ -129,7 +134,6 @@ fetch("./riddlesjson.json")
         userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()
       ){
         playSound();
-
         btn.classList.remove("message-btn");
         background.style.backgroundImage = "url(./img/joker_inChair.png)";
         phrasesLst();
@@ -154,6 +158,7 @@ fetch("./riddlesjson.json")
         userInput.value = "";
         displayQ();
         if (scoreCounter < 1) {
+          playLose();
           riddleQ.innerHTML = "";
           scoreCounter = 0;
           updateScore();
