@@ -14,7 +14,7 @@ function displayGame() {
   readyContent.style.display = "none";
   setTimeout(function() {
     mainGame.style.display = "flex";
-  },3000)
+  },3500)
 }
 readyBtn.onclick = displayGame;
 
@@ -199,7 +199,7 @@ fetch("./riddlesjson.json")
       btn.classList.add("message-btn");
       userInput.value = "";
       background.style.backgroundImage = "url(./img/background.jpeg)";
-      readContent.style.display = "flex";
+      readyContent.style.display = "block";
       checkAnswer();
     }
 
@@ -207,10 +207,6 @@ fetch("./riddlesjson.json")
 
     // call the displayQ function to display question on the dom
     displayQ();
-
-    // Adding sound to submit button
-    const audio = new Audio();
-    audio.src = "click.mp3";
   })
 
   .catch((error) => {
