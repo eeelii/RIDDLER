@@ -1,60 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Riddle Me this</title>
-  </head>
 
-  <body>
-    <div class="main-content">
-      <!-- create the header -->
-      <header class="header__content">
-        <h1 class="glitch">
-          <span aria-hidden="true">Riddle Me This!!</span>
-          Riddle Me This!!
-          <span aria-hidden="true">Riddle Me This!!</span>
-        </h1>
-        <button class="ready__btn" id="Ready">Ready</button>
-      </header>
-      <!-- create a div that contains the main game  -->
-      <main class="main__game">
-        <!-- create a div to store the content of the riddle  -->
-        <section class="riddles">
-          <h2 class="riddles__message message-btn" id="message-joker">I'm Ready</h2>
-          <p class="lstRiddle fade"></p>
-        </div>
-        <div class="answer">
-          <div class="image-manipulation">
-            <input
-              class="userAnswer"
-              id="user-value"
-              type="text"
-              placeholder="Answer if you dare"
-            />
-            <img
-              class="png1"
-              src="https://pngfre.com/wp-content/uploads/Joker-21.png"
-              alt="joker face"
-            />
-          </div>
-        </section>
-        <div class="submit-button">
-          <button
-            class="testLuck glow__on-hover"
-            id="submitAnswer"
-            onmousedown="audio.play();"
-          >
-            Testing my luck
-          </button>
-          <h2 class="score-content">Score:</h2>
-          <p id="user-Score">0</p>
-        </div>
-        <audio id="wrongAnswerSound" src="gameOver.wav"></audio>
-      </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Riddle Me this</title>
+</head>
+
+<body>
+  <div class="main-content">
+    <!-- create the header -->
+    <header class="header__content">
+      <h1 class="glitch">
+        <span aria-hidden="true">Riddle Me This!!</span>
+        Riddle Me This!!
+        <span aria-hidden="true">Riddle Me This!!</span>
+      </h1>
+      <button class="ready__btn" id="Ready">Ready</button>
+    </header>
+    <!-- create a div that contains the main game  -->
+    <main class="main__game">
+      <!-- create a div to store the content of the riddle  -->
+      <section class="riddles">
+        <h2 class="riddles__message message-btn" id="message-joker">I'm Ready</h2>
+        <p class="lstRiddle fade"></p>
+  </div>
+  <div class="answer">
+    <div class="image-manipulation">
+      <input class="userAnswer" id="user-value" type="text" placeholder="Answer if you dare" />
+      <img class="png1" src="https://pngfre.com/wp-content/uploads/Joker-21.png" alt="joker face" />
     </div>
+    </section>
+    <div class="submit-button">
+      <button class="testLuck glow__on-hover" id="submitAnswer" onmousedown="audio.play();">
+        Testing my luck
+      </button>
+      <h2 class="score-content">Score:</h2>
+      <p id="user-Score">0</p>
+    </div>
+    <audio id="wrongAnswerSound" src="gameOver.wav"></audio>
+    </main>
+  </div>
 
-    <script src="scriptTwo.js"></script>
-  </body>
+  <script src="scriptTwo.js"></script>
+</body>
+
 </html>

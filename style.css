@@ -36,7 +36,7 @@ Body {
 h1 {
   font-family: "Nanum Gothic", sans-serif;
   font-weight: 800;
-  color: var(--purple);
+  color: var(--red);
   text-align: left;
   height: 100px;
   letter-spacing: 2px;
@@ -49,6 +49,7 @@ h1 {
   margin-left: 257px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: 800;
+  color: #ffd700;
 }
 .ready__btn:hover {
   background-color: var(--green);
