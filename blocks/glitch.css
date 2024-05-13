@@ -83,10 +83,10 @@
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 620px) {
+@media screen and (min-width: 390px) and (max-width: 844px) {
   .glitch {
     font-size: xx-large;
     text-align: center;
-    font-size: 50px;
+    font-size: 30px;
   }
 }
