@@ -232,10 +232,17 @@ img {
   .ready-content {
     margin-left: 0;
     font-size: 30px;
-    margin-bottom: 0;
+    /* margin-bottom: 0; */
     flex-direction: column;
+    text-align: center;
   }
   .ready__btn {
     margin-left: 129px;
+    margin-bottom: 0;
+  }
+  .ready-play {
+    font-size: 50px;
+    align-items: center;
+    margin-left: 20px;
   }
 }

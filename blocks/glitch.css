@@ -86,7 +86,7 @@
 @media screen and (min-width: 390px) and (max-width: 844px) {
   .glitch {
     font-size: xx-large;
-    text-align: center;
-    font-size: 30px;
+    margin-left: -70px;
+    font-size: 25px;
   }
 }
