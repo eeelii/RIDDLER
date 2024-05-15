@@ -28,7 +28,9 @@ const wrongSound = new Audio("./sounds/joker-laugh.mp3");
 const readySound = new Audio("./sounds/and-here-we-go-joker.mp3");
 const loseSound = new Audio("./sounds/lets-put-a-smile-on-that-face.mp3");
 const winnerSound = new Audio("./sounds/joker-good-evening.mp3");
+
 const clickSound = new Audio("./sounds/click.mp3");
+
 // // now create a function for each sound
 function playWrong() {
   wrongSound.play();
