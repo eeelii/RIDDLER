@@ -69,9 +69,9 @@ h1 {
   font-family: "Nanum Gothic", sans-serif;
   font-weight: 800;
   font-size: 4rem;
-  color: var(--white);
+  color: var(--purple);
   text-transform: uppercase;
-  text-shadow: 2px 2px 0 var(--green);
+  text-shadow: 5px 5px 0 var(--green);
 }
 
 .ready-content {
@@ -217,6 +217,7 @@ img {
     background-size: 1639px;
     background-repeat: no-repeat;
     background-position: center;
+    margin-top: 139px;
   }
   h1 {
     font-size: 50px;
@@ -232,7 +233,7 @@ img {
   .ready-content {
     margin-left: 0;
     font-size: 30px;
-    /* margin-bottom: 0; */
+    margin-bottom: 0;
     flex-direction: column;
     text-align: center;
   }
