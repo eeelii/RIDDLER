@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(45deg, #9790f2, #236924);
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgb(0, 0, 0, 0.2);
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 20px;
+  width: 1000px;
+}
+
+.card__preview {
+  background-color: #2a265f;
+  color: #fff;
+  padding: 120px;
+  max-width: 400px;
+}
+
+.card__info {
+  position: relative;
+  padding: 30px;
+  max-width: 100%;
+}
+.card__riddle {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+  opacity: 0.6;
+  letter-spacing: 1px;
+}
+.score-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 4px 10px 5px var(--purple);
+  gap: 10px;
+  bottom: 240px;
+  right: 50px;
+  width: 150px;
+}
+.score__count {
+  align-self: center;
+  font-family: "Courier New", Courier, monospace;
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 800;
+}
+.card__input {
+  position: absolute;
+  bottom: 116px;
+  right: 448px;
+}
+.input-container {
+  position: relative;
+  width: 200px;
+}
+.input__answer {
+  width: 250px;
+  height: 70px;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  border: 2px solid #00ff00;
+  border-radius: 10px 20px;
+  padding-left: 20px;
+  margin-top: 170px;
+  color: #595959;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+}
+.input__answer:hover {
+  box-shadow: 0 0 20px #00ff00;
+  border-color: #00ff00;
+}
+.input__image {
+  position: absolute;
+  top: 10;
+  margin-left: 10px;
+  bottom: 15px;
+  width: 40px;
+  height: 45px;
+}
+.message__joker {
+  color: #fff;
+  top: 10;
+}
+.card__btn {
+  background-color: #2a265f;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 16px;
+  padding: 15px 25px;
+  position: absolute;
+  cursor: pointer;
+  bottom: 120px;
+  right: 50px;
+  letter-spacing: 1px;
+}
+.card__btn_text {
+  opacity: 0.6;
+}
+.card__btn:hover {
+  background-color: #236924;
+  transition: 0.3s ease-in-out;
+  opacity: 90%;
+}
