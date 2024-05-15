@@ -1,48 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="game.css" />
-    <title>Game</title>
-  </head>
-  <body>
-    <div class="card-container">
-      <div class="card">
-        <div class="card__preview">
-          <p class="card__riddle"></p>
-        </div>
-        <img 
-        src="./img/joker_inChair.png"
-        alt="joker image"
-        class="card__image"/>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="game.css" />
+  <title>Game</title>
+</head>
+
+<body>
+  <div class="card-container">
+    <div class="card">
+      <div class="card__preview">
+        <p class="card__riddle"></p>
       </div>
-      <div class="card__info">
-        <div class="score-container">
+      <img src="./img/joker_inChair.png" alt="joker image" class="card__image" />
+    </div>
+    <div class="card__info">
+      <div class="score-container">
         <h2 class="score">Score:</h2>
         <p class="score__count">0</p>
-        </div>
-        <div class="card__input">
-          <div class="input-container">
-            <h2 class="message__joker">I'm Ready</h2>
-            <input
-            class="input__answer"
-            id="input-value"
-            type="text"
-            placeholder="Anwer if you dare"
-            required
-            />
-            <img 
-            src="https://pngfre.com/wp-content/uploads/Joker-21.png"
-            alt="joker face" 
-            class="input__image" />
-          </div>
-        </div>
-        <button class="card__btn" id="submit__answer">Testing my luck</button>
       </div>
+      <div class="card__input">
+        <div class="input-container">
+          <h2 class="message__joker">I'm Ready</h2>
+          <input class="input__answer" id="input-value" type="text" placeholder="Anwer if you dare" required />
+          <img src="https://pngfre.com/wp-content/uploads/Joker-21.png" alt="joker face" class="input__image" />
+        </div>
       </div>
+      <button class="card__btn" id="submit__answer">Testing my luck</button>
     </div>
-    <script src="app.js"></script>
-  </body>
+  </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
 </html>

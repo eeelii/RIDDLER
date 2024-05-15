@@ -57,17 +57,17 @@ fetch("./riddlesjson.json")
         ];
 
         // get the btn to start the game
-        const jokerMessage = document.querySelector("message__Joker");
+        const jokerMessage = document.querySelector(".message__joker");
         // get the users input value
         const userInput = document.getElementById("input-value");
         // get the score element
-        const score = document.getElementById(".score__count");
+        const score = document.querySelector(".score__count");
         // get the question display element
         const cardRiddle = document.querySelector(".card__riddle");
         // get submit element
         const testMyLuck = document.getElementById("submit__answer");
         // get the body so you can change the background when needed
-        const background = document.querySelector("body");
+        const cardImage = document.querySelector(".card__image");
         // update score
         let scoreCounter = 0;
 
@@ -102,13 +102,12 @@ fetch("./riddlesjson.json")
                 userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()
             ) {
                 playSound();
-                background.style.backgroundImage = "url(./img/joker_inChair.png)";
                 phrasesLst();
                 scoreCounter++;
                 updateScore();
                 displayQ();
                 userInput.value = "";
-
+                cardImage.src = "./img/joker_inChair.png";
                 // update score once player reaches 3 points
                 if (scoreCounter === 3) {
                     winnerMessage();
@@ -119,7 +118,7 @@ fetch("./riddlesjson.json")
             } else {
                 playWrong();
                 jokerMessage.innerHTML = "Wrong Answer!";
-                background.style.backgroundImage = "url(./NewBackground.webp)";
+                cardImage.src = "NewBackground.webp";
                 scoreCounter--;
                 updateScore();
                 userInput.value = "";
@@ -155,6 +154,8 @@ fetch("./riddlesjson.json")
 
         // create a function to reset the game when the score gets to zero
         function resetGame() {
+            cardImage.src = "./img/joker_inChair.png";
+            jokerMessage.innerHTML = "";
             counter = 0;
             scoreCounter = 0;
             updateScore();
