@@ -2,19 +2,17 @@
 const readyBtn = document.getElementById("Ready");
 // get main game div
 const mainGame = document.querySelector(".main__game");
-// get-ready content 
+// get-ready content
 const readyContent = document.querySelector(".ready-content");
-
-
 
 // create a function that will display the main-game content
 function displayGame() {
   playReady();
   readyBtn.style.display = "none";
   readyContent.style.display = "none";
-  setTimeout(function() {
+  setTimeout(function () {
     mainGame.style.display = "flex";
-  },3500)
+  }, 3500);
 }
 readyBtn.onclick = displayGame;
 
@@ -29,26 +27,23 @@ const correctSound = new Audio("./sounds/its-all-part-of-the-plan.mp3");
 const wrongSound = new Audio("./sounds/joker-laugh.mp3");
 const readySound = new Audio("./sounds/and-here-we-go-joker.mp3");
 const loseSound = new Audio("./sounds/lets-put-a-smile-on-that-face.mp3");
-const winnerSound = new Audio("./sounds/joker-good-evening.mp3")
+const winnerSound = new Audio("./sounds/joker-good-evening.mp3");
 // // now create a function for each sound
 function playWrong() {
   wrongSound.play();
-};
+}
 
 function playSound() {
   correctSound.play();
-};
-
+}
 
 function playReady() {
   readySound.play();
-};
-
-
+}
 
 function playLose() {
   loseSound.play();
-};
+}
 
 function playWinner() {
   winnerSound.play();
@@ -132,7 +127,7 @@ fetch("./riddlesjson.json")
         btn.innerHTML = "Must Answer First";
       } else if (
         userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()
-      ){
+      ) {
         playSound();
         btn.classList.remove("message-btn");
         background.style.backgroundImage = "url(./img/joker_inChair.png)";
