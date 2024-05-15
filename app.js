@@ -1,9 +1,176 @@
 
 // ****** ACUTAL GAME FUNCTION BEGINS HERE ********
-// get card riddle for testing to assign riddles
+// obatin all the necessary DOM element 
+// will contain riddle
 const cardRiddle = document.querySelector(".card__riddle");
+// score counter  
+// replaced with phrase list 
+const jokerMessage = document.querySelector("message__Joker");
+// users respond 
+const userInput = document.getElementById("input-value");
+// submit button 
+const testMyLuck = document.getElementById("submit__answer");
 
-// #create a function to change the text color 
-const changeColor = () => cardRiddle.style.color = "red";
+// create sounds
+const correctSound = new Audio("./sounds/its-all-part-of-the-plan.mp3");
+const wrongSound = new Audio("./sounds/joker-laugh.mp3");
+const readySound = new Audio("./sounds/and-here-we-go-joker.mp3");
+const loseSound = new Audio("./sounds/lets-put-a-smile-on-that-face.mp3");
+const winnerSound = new Audio("./sounds/joker-good-evening.mp3");
 
-cardRiddle.onclick = changeColor;
+
+// create functions to play each sound 
+function playWrong() {
+    wrongSound.play();
+}
+
+function playSound() {
+    correctSound.play();
+}
+
+function playReady() {
+    readySound.play();
+}
+
+function playLose() {
+    loseSound.play();
+}
+
+function playWinner() {
+    winnerSound.play();
+}
+
+// ************ ACTUAL GAME FUNCTION *********************
+
+fetch("./riddlesjson.json")
+    .then((response) => response.json())
+    .then((data) => {
+        const riddles = data;
+        const phrases = [
+            "Why so serious?",
+            "What doesn't kill you simply makes you stranger!",
+            "As you know, madness is like gravity: All it takes is a little push",
+            "If you’re good at something, never do it for free",
+            "When they treat you like a joke, leave them like it's funny",
+            "A joke a day keeps the gloom away!",
+            "Don't test the monster in me!",
+        ];
+
+        // get the btn to start the game
+        const jokerMessage = document.querySelector("message__Joker");
+        // get the users input value
+        const userInput = document.getElementById("input-value");
+        // get the score element
+        const score = document.getElementById(".score__count");
+        // get the question display element
+        const cardRiddle = document.querySelector(".card__riddle");
+        // get submit element
+        const testMyLuck = document.getElementById("submit__answer");
+        // get the body so you can change the background when needed
+        const background = document.querySelector("body");
+        // update score
+        let scoreCounter = 0;
+
+        // create a function to shuffle the riddles
+        function shuffleAr(arHere) {
+            for (let i = arHere.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arHere[i], arHere[j]] = [arHere[j], arHere[i]];
+            }
+            return arHere;
+        }
+
+        // create a function that updates the score each time someone gets a question right
+        function updateScore() {
+            score.innerHTML = scoreCounter;
+        }
+
+        // create a function that displays winner once a player reaches 3 points
+        function winnerMessage() {
+            playWinner();
+            //   btn.innerHTML = "Why so Serious";
+            cardRiddle.innerHTML = "Let's see you try again";
+            // remove submit button and add new button
+        }
+
+        // check if the answer is correct
+        function checkAnswer() {
+            // const answerShuflle = shuffleAr(riddles);
+            if (userInput.value.trim() === "") {
+                jokerMessage.innerHTML = "Must Answer First";
+            } else if (
+                userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()
+            ) {
+                playSound();
+                background.style.backgroundImage = "url(./img/joker_inChair.png)";
+                phrasesLst();
+                scoreCounter++;
+                updateScore();
+                displayQ();
+                userInput.value = "";
+
+                // update score once player reaches 3 points
+                if (scoreCounter === 3) {
+                    winnerMessage();
+                    setTimeout(function () {
+                        resetGame();
+                    }, 2500);
+                }
+            } else {
+                playWrong();
+                jokerMessage.innerHTML = "Wrong Answer!";
+                background.style.backgroundImage = "url(./NewBackground.webp)";
+                scoreCounter--;
+                updateScore();
+                userInput.value = "";
+                displayQ();
+                if (scoreCounter < 1) {
+                    playLose();
+                    cardRiddle.innerHTML = "";
+                    scoreCounter = 0;
+                    updateScore();
+                    testMyLuck.innerHTML = "hahaha you lost";
+                    jokerMessage.innerHTML = "hahaha you lost";
+                    setTimeout(function () {
+                        resetGame();
+                    }, 2900);
+                }
+            }
+        }
+
+        // create a function that iterates through the phraseslst
+        function phrasesLst() {
+            // create a random number
+            const ranNum = Math.floor(Math.random() * phrases.length);
+            jokerMessage.innerHTML = phrases[ranNum];
+        }
+
+        // create a function that displays the question when the button ready is hit
+        const shuffleRiddle = shuffleAr(riddles);
+        function displayQ() {
+            const shuffleRiddle = shuffleAr(riddles);
+            // riddleQ.innerHTML = riddles[counter].question;
+            cardRiddle.innerHTML = shuffleRiddle[0].question;
+        }
+
+        // create a function to reset the game when the score gets to zero
+        function resetGame() {
+            counter = 0;
+            scoreCounter = 0;
+            updateScore();
+            displayQ();
+            testMyLuck.innerHTML = "Test My Luck";
+            userInput.value = "";
+            background.style.backgroundImage = "url(./img/background.jpeg)";
+            checkAnswer();
+        }
+
+        testMyLuck.onclick = checkAnswer;
+
+        // call the displayQ function to display question on the dom
+        displayQ();
+    })
+
+    .catch((error) => {
+        console.error("Error fetching JSON:", error);
+    });
