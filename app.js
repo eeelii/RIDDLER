@@ -40,6 +40,9 @@ function playWinner() {
     winnerSound.play();
 }
 
+function defaultSound(audio){
+    audio.play();
+}
 // ************ ACTUAL GAME FUNCTION *********************
 
 fetch("./riddlesjson.json")
@@ -116,7 +119,7 @@ fetch("./riddlesjson.json")
                     }, 2500);
                 }
             } else {
-                playWrong();
+                defaultSound(wrongSound);
                 jokerMessage.innerHTML = "Wrong Answer!";
                 cardImage.src = "NewBackground.webp";
                 scoreCounter--;
@@ -124,7 +127,7 @@ fetch("./riddlesjson.json")
                 userInput.value = "";
                 displayQ();
                 if (scoreCounter < 1) {
-                    playLose();
+                    defaultSound(loseSound);
                     cardRiddle.innerHTML = "";
                     scoreCounter = 0;
                     updateScore();
@@ -162,7 +165,6 @@ fetch("./riddlesjson.json")
             displayQ();
             testMyLuck.innerHTML = "Test My Luck";
             userInput.value = "";
-            background.style.backgroundImage = "url(./img/background.jpeg)";
             checkAnswer();
         }
 
