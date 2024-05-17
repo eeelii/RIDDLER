@@ -3,6 +3,7 @@
   font-weight: 700;
   text-transform: uppercase;
   position: relative;
+  font-family: "Coveat", cursive;
 
   text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
     -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
@@ -21,7 +22,7 @@
   animation: glitch 650ms infinite;
   clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
   transform: translate(-0.025em, -0.0125em);
-  /* color: green; */
+  /* color: #00ff00cf; */
   opacity: 0.8;
 }
 
@@ -29,7 +30,7 @@
   animation: glitch 375ms infinite;
   clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
   transform: translate(0.0125em, 0.025em);
-  /* color: red; */
+  /* color: #59ff00cc; */
   opacity: 0.8;
 }
 
@@ -86,7 +87,7 @@
 @media screen and (min-width: 390px) and (max-width: 844px) {
   .glitch {
     font-size: xx-large;
-    margin-left: -70px;
-    font-size: 25px;
+    margin-left: -125px;
+    font-size: 33px;
   }
 }
