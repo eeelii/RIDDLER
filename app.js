@@ -124,7 +124,7 @@ fetch("./riddlesjson.json")
                     winnerMessage();
                     setTimeout(function () {
                         // resetGame();
-                        hideDiv("Do you really think you won?")
+                        hideDiv("Do you really think you won?", "./img/winnerbk.jpg")
                     }, 2500);
                 }
             } else {
@@ -144,7 +144,7 @@ fetch("./riddlesjson.json")
                     jokerMessage.innerHTML = "hahaha you lost";
                     setTimeout(function () {
                         // resetGame();
-                        hideDiv("Game Over!!");
+                        hideDiv("Game Over!!", "./img/loserbk.jpg");
                     }, 2900);
                 }
             }
@@ -167,8 +167,8 @@ fetch("./riddlesjson.json")
 
 
         // hid the div to restart the game 
-        function hideDiv(gameOver) {
-            cardImage.src = "./img/loserbk.jpg";
+        function hideDiv(gameOver, imagePath) {
+            cardImage.src = imagePath;
             testMyLuck.style.display = "none";
             scoreContainerDiv.style.display = "none";
             inputContainerDiv.style.display = "none";
