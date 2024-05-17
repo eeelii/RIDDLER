@@ -112,6 +112,7 @@ fetch("./riddlesjson.json")
             } else if (
                 userInput.value.toLowerCase() === shuffleRiddle[0].answer.toLowerCase()
             ) {
+                score.style.color = "white";
                 playSound();
                 phrasesLst();
                 scoreCounter++;
@@ -129,6 +130,7 @@ fetch("./riddlesjson.json")
                 }
             } else {
                 defaultSound(wrongSound);
+                score.style.color = "red";
                 jokerMessage.innerHTML = "Wrong Answer!";
                 cardImage.src = "NewBackground.webp";
                 scoreCounter--;
