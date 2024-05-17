@@ -55,15 +55,6 @@ function playWinner() {
 function playClick() {
   clickSound.play();
 }
-// create a function that will display the main-game content
-
-// function displayGame() {
-//   mainGame.style.display = "flex";
-//   readyBtn.style.display = "none";
-//   readContent.style.display = "none";
-// }
-// readyBtn.onclick = displayGame;
-
 // create the functionality of the game
 fetch("./riddlesjson.json")
   .then((response) => response.json())
@@ -82,7 +73,7 @@ fetch("./riddlesjson.json")
     // get the btn to start the game
     const btn = document.getElementById("message-joker");
     // get the users input value
-    const userInput = document.getElementById("user-value");
+    const userInput = document.getElementById("input-value");
     // get the score element
     const score = document.getElementById("user-Score");
     // get the question display element

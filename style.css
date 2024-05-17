@@ -34,14 +34,6 @@ Body {
   padding-left: 150px;
   margin-top: 45px;
 }
-.main__game {
-  max-width: 100%;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 100px;
-}
 
 h1 {
   font-family: "Nanum Gothic", sans-serif;
@@ -52,6 +44,7 @@ h1 {
   letter-spacing: 2px;
   text-transform: uppercase;
   text-shadow: 5px 10px 0 var(--green);
+  /* Please modify this in the media like 60 or so */
   font-size: 75px;
 }
 
@@ -71,6 +64,7 @@ h1 {
   font-size: 4rem;
   color: var(--purple);
   text-transform: uppercase;
+  /* Please modify this in the media */
   text-shadow: 5px 5px 0 var(--green);
 }
 
@@ -80,17 +74,6 @@ h1 {
   align-items: flex-start;
   margin-left: 250px;
   margin-bottom: 45px;
-}
-/* Design riddle box  */
-.riddles {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* border: 2px solid yellow; */
-  width: 50%;
-  height: 150px;
-  padding: 50px;
-  margin-top: 250px;
 }
 
 button {
@@ -109,28 +92,7 @@ button {
 button:active {
   padding: 9px 19px;
 }
-.message-btn {
-  display: none;
-}
 
-.riddles__message {
-  align-self: center;
-  color: var(--purple);
-  text-shadow: 2px 2px 0 var(--green);
-  /* border-bottom: 1px solid #00ff00; */
-  position: relative;
-}
-.riddles__message::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 2px;
-  background: linear-gradient(45deg, #ff4500, #ffa500, #ff4500);
-  opacity: 0.5;
-  z-index: -1;
-  animation: flicker 2s infinite alternate;
-}
 p {
   font-family: "Coveat", cursive;
   color: var(--white);
@@ -138,79 +100,6 @@ p {
   font-weight: 800;
   text-shadow: 3px 5px 6px var(--purple);
 }
-
-/* design user input  */
-img {
-  width: 50px;
-  height: 50px;
-}
-.png1 {
-  position: absolute;
-  top: 10;
-  left: 0;
-  bottom: 15px;
-}
-
-.userAnswer {
-  width: 250px;
-  height: 70px;
-  text-align: center;
-  border-radius: 10px 20px;
-  padding: 0 20px;
-  margin-top: 45px;
-  color: #595959;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  /* font-weight: 800; */
-  font-size: 18px;
-}
-
-.userAnswer:hover {
-  box-shadow: 0 0 20px #00ff00;
-  border-color: #00ff00;
-}
-
-.image-manipulation {
-  position: relative;
-  width: 200px;
-}
-.answer {
-  /* border: 2px solid red; */
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* design submit button  */
-
-.submit-button {
-  width: 50%;
-  display: flex;
-  justify-content: space-evenly;
-  /* border: 3px solid; */
-  align-items: center;
-  margin-top: 150px;
-}
-
-.testLuck {
-  width: 200px;
-  height: 70px;
-  text-align: center;
-  border-radius: 20px;
-  padding: 0 20px;
-  transition: transform 0.3s ease-in-out;
-  /* margin-bottom: 500px; */
-}
-
-.testLuck:hover {
-  transform: scale(1.1);
-}
-
-/* .score-content {
-  display: block;
-  text-align: center;
-  align-items: center;
-} */
 
 @media screen and (min-width: 390px) and (max-width: 844px) {
   Body {
@@ -241,6 +130,8 @@ img {
     margin-left: 129px;
     margin-bottom: 0;
   }
+
+  /* Please make the font small here like 25px   */
   .ready-play {
     font-size: 50px;
     align-items: center;
