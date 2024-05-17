@@ -59,8 +59,20 @@ fetch("./riddlesjson.json")
         const testMyLuck = document.getElementById("submit__answer");
         // get the body so you can change the background when needed
         const cardImage = document.querySelector(".card__image");
+        // retrieve card__info div 
+        const cardInfo = document.querySelector(".card__info");
         // update score
         let scoreCounter = 0;
+
+
+        // create a new h1 element stating game over 
+        const h1 = document.createElement("h1");
+        h1.style.color = "white";
+        // create a new div 
+        const playAgainDiv = document.createElement("div");
+        playAgainDiv.id = "play__Again__div";
+        // Append h1 to playAgainDiv 
+        playAgainDiv.appendChild(h1);
 
 
         // get containers 
@@ -111,7 +123,8 @@ fetch("./riddlesjson.json")
                 if (scoreCounter === 3) {
                     winnerMessage();
                     setTimeout(function () {
-                        resetGame();
+                        // resetGame();
+                        hideDiv("Do you really think you won?")
                     }, 2500);
                 }
             } else {
@@ -131,7 +144,7 @@ fetch("./riddlesjson.json")
                     jokerMessage.innerHTML = "hahaha you lost";
                     setTimeout(function () {
                         // resetGame();
-                        hideDiv();
+                        hideDiv("Game Over!!");
                     }, 2900);
                 }
             }
@@ -154,12 +167,15 @@ fetch("./riddlesjson.json")
 
 
         // hid the div to restart the game 
-        function hideDiv() {
+        function hideDiv(gameOver) {
             cardImage.src = "./img/loserbk.jpg";
             testMyLuck.style.display = "none";
             scoreContainerDiv.style.display = "none";
             inputContainerDiv.style.display = "none";
             playAgainBtn.style.display = "block";
+            h1.innerHTML = gameOver;
+            cardInfo.appendChild(playAgainDiv);
+            playAgainDiv.style.display = "";
         }
         // now create a playagain function 
         function playAgain() {
@@ -173,6 +189,7 @@ fetch("./riddlesjson.json")
             scoreContainerDiv.style.display = "";
             inputContainerDiv.style.display = "";
             playAgainBtn.style.display = "none";
+            playAgainDiv.style.display = "none";
         }
         // create a function to reset the game when the score gets to zero
         function resetGame() {
