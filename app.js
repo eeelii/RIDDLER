@@ -65,9 +65,10 @@ fetch("./riddlesjson.json")
 
     // get containers 
     // get score-container 
-    const scoreContainerDiv = document.querySelector("score-container");
+    const scoreContainerDiv = document.querySelector(".score-container");
     // get input container 
-    const inputContainerDiv = document.querySelector("input-container");
+    const inputContainerDiv = document.querySelector(".input-container");
+    // get play again button
 
     // create a function to shuffle the riddles
     function shuffleAr(arHere) {
@@ -129,7 +130,8 @@ fetch("./riddlesjson.json")
           testMyLuck.innerHTML = "hahaha you lost";
           jokerMessage.innerHTML = "hahaha you lost";
           setTimeout(function () {
-            resetGame();
+            // resetGame();
+            hideDiv();
           }, 2900);
         }
       }
@@ -148,6 +150,15 @@ fetch("./riddlesjson.json")
       const shuffleRiddle = shuffleAr(riddles);
       // riddleQ.innerHTML = riddles[counter].question;
       cardRiddle.innerHTML = shuffleRiddle[0].question;
+    }
+
+
+    // hid the div to restart the game 
+    function hideDiv () {
+        cardImage.src = "./img/loserbk.jpg";
+        scoreContainerDiv.style.display = "none";
+        inputContainerDiv.style.display = "none";
+        testMyLuck.style.display = "none";
     }
 
     // create a function to reset the game when the score gets to zero
