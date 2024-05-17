@@ -1,14 +1,4 @@
 // ****** ACUTAL GAME FUNCTION BEGINS HERE ********
-// obatin all the necessary DOM element
-// will contain riddle
-const cardRiddle = document.querySelector(".card__riddle");
-// score counter
-// replaced with phrase list
-const jokerMessage = document.querySelector("message__Joker");
-// users respond
-const userInput = document.getElementById("input-value");
-// submit button
-const testMyLuck = document.getElementById("submit__answer");
 
 // create sounds
 const correctSound = new Audio("./sounds/its-all-part-of-the-plan.mp3");
@@ -71,6 +61,13 @@ fetch("./riddlesjson.json")
     const cardImage = document.querySelector(".card__image");
     // update score
     let scoreCounter = 0;
+
+
+    // get containers 
+    // get score-container 
+    const scoreContainerDiv = document.querySelector("score-container");
+    // get input container 
+    const inputContainerDiv = document.querySelector("input-container");
 
     // create a function to shuffle the riddles
     function shuffleAr(arHere) {
