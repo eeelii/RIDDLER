@@ -1,0 +1,25 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1000px;
+}
+
+.nav__links {
+  display: flex;
+  gap: 50px;
+  list-style-type: none;
+}
+
+.nav__btn {
+  font-family: "Coveat", cursive;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav__btn:hover {
+  transform: scale(1.1);
+  box-shadow: 6px 6px #adff2f;
+  background-color: rgba(129, 7, 173, 0.943);
+}
