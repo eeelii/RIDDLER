@@ -192,6 +192,7 @@ fetch("./riddlesjson.json")
     }
     // create a function to reset the game when the score gets to zero
     function resetGame() {
+      score.style.color = "white";
       cardImage.src = "./img/joker_inChair.png";
       jokerMessage.innerHTML = "";
       counter = 0;
