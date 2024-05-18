@@ -106,7 +106,7 @@ p {
   Body {
     background-size: 1639px;
     background-repeat: no-repeat;
-    background-position: center;
+    /* background-position: center; */
     margin-top: 139px;
   }
   h1 {
