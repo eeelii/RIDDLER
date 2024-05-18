@@ -14,9 +14,15 @@ body {
   min-height: 100vh;
   margin: 0;
 }
-.btn2 {
-  display: none;
-}
+
+/* .card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+} */
 
 .card {
   background-color: #fff;
@@ -135,6 +141,9 @@ body {
 .btn2 {
   position: absolute;
   bottom: 130px;
+}
+.btn2 {
+  display: none;
 }
 
 #play__again__div {
