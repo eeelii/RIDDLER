@@ -1,7 +1,7 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  margin-left: 1000px;
+  margin-left: 900px;
 }
 
 .nav__links {
@@ -21,5 +21,7 @@
 .nav__btn:hover {
   transform: scale(1.1);
   box-shadow: 6px 6px #adff2f;
-  background-color: rgba(129, 7, 173, 0.943);
+  border: 3px solid #adff2f;
+  color: #fff;
+  background-color: rgba(149, 0, 203, 0.451);
 }
