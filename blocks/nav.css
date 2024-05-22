@@ -1,27 +1,15 @@
-.nav {
+.nav__list {
   display: flex;
-  justify-content: space-between;
-  margin-left: 900px;
 }
 
-.nav__links {
-  display: flex;
-  gap: 50px;
-  list-style-type: none;
+.nav__list a {
+  margin-left: 60px;
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: all 0.55s ease;
 }
 
-.nav__btn {
-  font-family: "Coveat", cursive;
-  font-weight: 500;
-  font-size: 30px;
-  line-height: 20px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.nav__btn:hover {
-  transform: scale(1.1);
-  box-shadow: 6px 6px #adff2f;
-  border: 3px solid #adff2f;
-  color: #fff;
-  background-color: rgba(149, 0, 203, 0.451);
+.nav__list a:hover {
+  border-bottom: 2px solid #fff;
 }

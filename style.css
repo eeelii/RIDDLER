@@ -21,54 +21,153 @@
   --gold-yellow: #ffd700;
 }
 
-Body {
-  background: url("./img/background.jpeg");
-  color: #fff;
-  /* background: transparent; */
-  background-size: cover;
-  background-repeat: no-repeat;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  color: white;
 }
 
-.header__content {
-  /* position: fixed;
+header {
+  position: fixed;
   right: 0;
   top: 0;
   z-index: 1000;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between; */
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  /* padding-left: 150px; */
-  /* margin-top: 20px; */
+  justify-content: space-between;
+  padding: 33px 9%;
+  background: transparent;
 }
 
-h1 {
-  font-family: "Nanum Gothic", sans-serif;
-  font-weight: 800;
-  color: var(--purple);
-  text-align: left;
-  height: 100px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-shadow: 5px 10px 0 var(--green);
-  /* Please modify this in the media like 60 or so */
-  font-size: 75px;
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#menu-icon {
+  color: #fff;
+  font-size: 35px;
+  z-index: 10001;
+  cursor: pointer;
+  display: none;
+}
+
+.how__to-play {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    245.59deg,
+    #030b16 0%,
+    #1fa6a0 28.53%,
+    #020a15 75.52%
+  );
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+
+/* .joker__image {
+  max-height: 400px;
+} */
+
+section {
+  padding: 0 19%;
+}
+
+.htp__text h1 {
+  font-family: "Permanent Marker", cursive;
+  font-size: 90px;
+  line-height: 1;
+  color: #fff;
+  margin: 0 0 45px;
+}
+
+.htp__text p {
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 40px;
+}
+
+.htp__img img {
+  width: 700px;
+  height: auto;
 }
 
 .ready__btn {
-  margin-left: 257px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-weight: 800;
+  display: inline-block;
+  color: #fff;
+  background: #71cec4;
+  border: 1px solid transparent;
+  padding: 12px 30px;
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: all 0.55s ease;
 }
-/* .ready__btn:hover {
-  background-color: var(--green);
-  transition: 0.5s ease-in-out;
-  opacity: 90%;
-} */
+
+.ready__btn:hover {
+  background: transparent;
+  border: 1px solid #fff;
+  transform: translateX(8px);
+}
+
+.trailer__btn {
+  display: inline-block;
+  color: #fff;
+  background: transparent;
+  border: 1px solid #fff;
+  margin-left: 20px;
+  padding: 12px 30px;
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: all 0.55s ease;
+}
+
+.trailer__btn i {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.trailer__btn:hover {
+  background: transparent;
+  border: 1px solid #fff;
+  transform: translateX(8px);
+}
+
+.icons {
+  position: absolute;
+  top: 50%;
+  padding: 0 9%;
+  transform: translateY(-50%);
+}
+
+.icons i {
+  display: block;
+  margin: 26px 0;
+  font-size: 24px;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+.icons i:hover {
+  color: #71cec4;
+  transform: translateY(-5px);
+}
+
 .ready-play {
   font-family: "Nanum Gothic", sans-serif;
   font-weight: 800;
@@ -112,50 +211,90 @@ button:active {
   padding: 9px 19px;
 }
 
-p {
-  /* font-family: "Coveat", cursive; */
-  color: var(--white);
-  font-size: 30px;
-  font-weight: 800;
-  text-shadow: 3px 5px 6px var(--purple);
+@media (max-width: 1535px) {
+  header {
+    padding: 15px 3%;
+    transition: 0.2s;
+  }
+  .icons {
+    padding: 0 3%;
+    transition: 0.2s;
+  }
 }
 
-@media screen and (min-width: 390px) and (max-width: 844px) {
-  Body {
-    background-size: 1639px;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top: 139px;
+@media (max-width: 1460px) {
+  section {
+    padding: 0 12%;
+    transition: 0.2s;
   }
-  h1 {
-    font-size: 50px;
-  }
-  p {
-    text-align: center;
-    /* margin-top: -300px; */
-  }
+}
 
-  .main__game {
-    align-content: center;
+@media (max-width: 1340px) {
+  .htp__img img {
+    width: 100%;
+    height: auto;
   }
-  .ready-content {
-    margin-left: 0;
-    font-size: 30px;
-    /* margin-bottom: 0; */
-    flex-direction: column;
+  .htp__text h1 {
+    font-size: 75px;
+    margin: 0 0 30px;
+  }
+}
+
+@media (max-width: 1195px) {
+  section {
+    padding: 0 3%;
+    transition: 0.2s;
+  }
+  .htp__text {
+    padding-top: 115px;
+  }
+  .htp__img {
     text-align: center;
   }
-  .ready__btn {
-    margin-left: 110px;
-    margin-bottom: 0;
-    font-size: 20px;
+  .htp__img img {
+    width: 560px;
+    height: auto;
   }
+  .how__to-play {
+    height: 100%;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  .icons {
+    display: none;
+  }
+}
 
-  /* Please make the font small here like 25px   */
-  .ready-play {
-    font-size: 40px;
+@media (max-width: 990px) {
+  #menu-icon {
+    display: block;
+  }
+  .nav__list {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 300px;
+    height: 40vh;
+    background: #010816;
+    display: flex;
     align-items: center;
-    margin-left: 53px;
-    text-align: center;
+    flex-direction: column;
+    padding: 50px 20px;
+    transition: all 0.55s ease;
+  }
+  .nav__list a {
+    margin-left: 0;
+    display: block;
+    margin: 7px 0;
+  }
+  .nav__list.open {
+    right: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .htp__img img {
+    width: 100%;
+    height: auto;
   }
 }

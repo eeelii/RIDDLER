@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Riddle Me this</title>
+    <!-- Boxicon links -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <!-- Remixicons link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="
+stylesheet"
+    />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,36 +27,45 @@ family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
   </head>
 
   <body>
-    <div class="main-content">
-      <!-- create the header -->
-      <nav class="nav">
-        <ul class="nav__links">
-          <li>
-            <button type="button" class="nav__btn">Home</button>
-          </li>
-          <li>
-            <button type="button" class="nav__btn">Play</button>
-          </li>
-          <li>
-            <button type="button" class="nav__btn">Projects</button>
-          </li>
-        </ul>
-      </nav>
-      <header class="header__content">
-        <h1 class="glitch">
-          <span aria-hidden="true">Riddle Me This!!</span>
-          Riddle Me This!!
-          <span aria-hidden="true">Riddle Me This!!</span>
-        </h1>
-      </header>
-
-      <div class="ready-content">
-        <h2 class="ready-play">How To Play</h2>
-        <p>Provide a single word answer to earn points</p>
-        <p>"And.....Here...We...Go" -The Joker</p>
+    <header>
+      <a href="#" class="logo">Riddle Me This!!</a>
+      <ul class="nav__list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Play</a></li>
+        <li><a href="#">Projects</a></li>
+      </ul>
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+    <section class="how__to-play">
+      <div class="htp__text">
+        <h1>Riddles!!</h1>
+        <h2>How to Play</h2>
+        <p>
+          Provide a single word answer to earn points! Reach 0 and you lose!
+        </p>
+        <button class="ready__btn" id="Ready">Ready</button>
+        <a href="https://youtu.be/xy8aJw1vYHo?si=u7BIACPCjpyDlS8Y"
+          ><button class="trailer__btn">
+            <i class="ri-play-line"></i>Watch Trailer
+          </button></a
+        >
       </div>
-      <button class="ready__btn" id="Ready">Ready</button>
+      <div class="htp__img">
+        <img
+          src="./img/jokerHoldingCard.png"
+          alt="Joker Holding Card"
+          class="joker__image"
+        />
+      </div>
+    </section>
+    <div class="icons">
+      <a href="#"><i class="ri-github-fill"></i></a>
+      <a href="#"><i class="ri-discord-line"></i></a>
+      <a href="#"><i class="ri-instagram-line"></i></a>
     </div>
+    <!-- Scroll Reveal Effect -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- JS Script -->
     <script src="script.js"></script>
   </body>
 </html>
