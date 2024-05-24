@@ -273,9 +273,9 @@ button:active {
     position: absolute;
     top: 100%;
     right: -100%;
-    width: 300px;
-    height: 40vh;
-    background: #010816;
+    width: 100px;
+    height: 198px;
+    background: hsla(220, 91%, 5%, 0.502);
     display: flex;
     align-items: center;
     flex-direction: column;

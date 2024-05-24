@@ -1,40 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="game.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./img/jokerIcon.png" />
+    <title>Game</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="game.css" />
-  <title>Game</title>
-</head>
-
-<body>
-  <div class="card-container">
-    <div class="card">
-      <div class="card__preview">
-        <p class="card__riddle"></p>
-      </div>
-      <img src="./img/joker_inChair.png" alt="joker image" class="card__image" />
-    </div>
-    <div class="card__info">
-      <div class="score-container">
-        <h2 class="score">Score:</h2>
-        <p class="score__count">0</p>
-      </div>
-      <div class="card__input">
-        <div class="input-container">
-          <h2 class="message__joker">I'm Ready</h2>
-          <input class="input__answer" id="input-value" type="text" placeholder="Anwer if you dare" required />
-          <img src="https://pngfre.com/wp-content/uploads/Joker-21.png" alt="joker face" class="input__image" />
+  <body>
+    <header>
+      <a href="index.html" class="logo">Riddle Me This!!</a>
+      <ul class="nav__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="game.html">Play</a></li>
+        <li><a href="team.html">Creators</a></li>
+      </ul>
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+    <div class="card-container">
+      <div class="card">
+        <div class="card__preview">
+          <p class="card__riddle"></p>
         </div>
+        <img
+          src="./img/joker_inChair.png"
+          alt="joker image"
+          class="card__image"
+        />
       </div>
-      <button class="card__btn" id="submit__answer">Testing my luck</button>
-      <button class="card__btn btn2" id="play__again">Play again?</button>
+      <div class="card__info">
+        <div class="score-container">
+          <h2 class="score">Score:</h2>
+          <p class="score__count">0</p>
+        </div>
+        <div class="card__input">
+          <div class="input-container">
+            <h2 class="message__joker">I'm Ready</h2>
+            <input
+              class="input__answer"
+              id="input-value"
+              type="text"
+              placeholder="Anwer if you dare"
+              required
+            />
+            <img
+              src="https://pngfre.com/wp-content/uploads/Joker-21.png"
+              alt="joker face"
+              class="input__image"
+            />
+          </div>
+        </div>
+        <button class="card__btn" id="submit__answer">Testing my luck</button>
+        <button class="card__btn btn2" id="play__again">Play again?</button>
+      </div>
     </div>
-  </div>
-  </div>
-  <script src="app.js"></script>
-</body>
-
+    <script src="app.js"></script>
+  </body>
 </html>
