@@ -173,3 +173,38 @@ body {
 .card__img img:hover {
   transform: scale(1.1);
 }
+
+#menu-icon {
+  color: #fff;
+  font-size: 35px;
+  z-index: 10001;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 990px) {
+  #menu-icon {
+    display: block;
+  }
+  .nav__list {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 100px;
+    height: 198px;
+    background: hsla(220, 91%, 5%, 0.502);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 20px;
+    transition: all 0.55s ease;
+  }
+  .nav__list a {
+    margin-left: 0;
+    display: block;
+    margin: 7px 0;
+  }
+  .nav__list.open {
+    right: 0;
+  }
+}

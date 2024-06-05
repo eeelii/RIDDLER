@@ -263,6 +263,10 @@ button:active {
   .icons {
     display: none;
   }
+
+  .title h4 {
+    margin-top: 70px;
+  }
 }
 
 @media (max-width: 990px) {
@@ -290,11 +294,19 @@ button:active {
   .nav__list.open {
     right: 0;
   }
+
+  .title h4 {
+    margin-top: 70px;
+  }
 }
 
 @media (max-width: 680px) {
   .htp__img img {
     width: 100%;
     height: auto;
+  }
+
+  .title h4 {
+    margin-top: 70px;
   }
 }
